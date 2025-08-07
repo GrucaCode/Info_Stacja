@@ -14,7 +14,6 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="css/profile-style.css" />
-
 </head>
 
 <body>
@@ -111,7 +110,6 @@
         </div>
     </header>
     <main>
-
         <section id="login-section" class="login-sec">
             <div class="login-sec__title">
                 <i class="material-icons-outlined arrow-right">arrow_right</i>
@@ -149,10 +147,6 @@
                 </button>
             </div>
         </section>
-
-
-
-
         <section id="register-section" class="register-sec">
             <div class="register-sec__title">
                 <i class="material-icons-outlined arrow-right">arrow_right</i>
@@ -161,20 +155,18 @@
             <div class="register-sec__avatar">
                 <img src="img/register-awatar.svg" alt="Osoba na zielonym tle" class="register-sec__img">
             </div>
-
             <div class="register-sec__wrapper">
                 <p class="register-sec__quest--up register-sec__quest">Nie masz jeszcze założonego profilu na Info
                     Stacji?</p>
                 <div class="clean-btn-wrapper">
                     <p class="clean-text data-clean-text">Wyczyść formularz</p>
-                    <button class="clean-btn">
+                    <button type="button" class="clean-btn">
                         <div class="clean-btn__frame">
                             <i class="material-icons-outlined clean-btn__visibility"
                                 id="brush-icon">cleaning_services</i>
                         </div>
                     </button>
                 </div>
-
                 <form id="register-form" class="register-form data-register-form">
                     <label for="firstName" class="register-form__label">Imię:</label>
                     <input type="text" name="firstName" placeholder="Wpisz imię" required
@@ -196,7 +188,7 @@
 
                     <div class="see-pass-btn-wrapper">
                         <p class="see-pass-text data-see-pass-text">Zobacz hasło</p>
-                        <button class="see-pass-btn">
+                        <button class="see-pass-btn register-see-pass-btn">
                             <div class="see-pass-btn__frame">
                                 <i class="material-icons-outlined see-pass-btn__visibility"
                                     id="eye-opened-icon">visibility</i>
@@ -217,7 +209,6 @@
                 <p class="show-login-btn__text">Zaloguj się tutaj</p>
             </button>
         </section>
-
         <section id="user-section" class="user-sec">
             <div class="logout-btn-wrapper">
                 <p class="logout-btn-text">Wyloguj się</p>
@@ -249,7 +240,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="user-data__info2">
                             <div class="user-data__item user-data__item--email">
                                 <p class="user-data__text user-data__text--email user-data__label">E-mail:</p>
@@ -321,7 +311,6 @@
             <p class="btn-go-up__text">Wróć do góry</p>
         </div>
     </a>
-
     <script src="js/fontAdjust.js"></script>
     <script src="js/updateTopPadding.js"></script>
     <script src="js/test.js"></script>
@@ -329,8 +318,7 @@
     <script src="js/upButton.js"></script>
     <script src="js/hamburgerMenu.js"></script>
     <script src="js/profile.js"></script>
-
-
+    <script src="js/cleanRegistration.js"></script>
 </body>
 
 </html>

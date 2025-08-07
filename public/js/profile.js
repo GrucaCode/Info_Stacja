@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const visibilityIcon = document.getElementById("eye-opened-icon");
   const seePassText = document.querySelector(".data-see-pass-text");
 
+  const regSeePassBtn = document.querySelector(".register-see-pass-btn");
+  const regPasswordInput = document.querySelector("#register-form input[name='password']");
+  const regVisibilityIcon = document.querySelector("#register-form .see-pass-btn__visibility");
+  const regSeePassText = document.querySelector("#register-form .see-pass-text");
+
   const loginEmail = document.querySelector("#login-form input[name='email']");
   const loginPassword = document.querySelector("#login-form input[name='password']");
   const loginBtn = document.querySelector(".data-login-submit-btn");
@@ -172,6 +177,16 @@ document.addEventListener("DOMContentLoaded", () => {
       seePassText.textContent = isVisible ? "Zobacz hasło" : "Ukryj hasło";
     });
   }
+
+  if (regSeePassBtn && regPasswordInput && regVisibilityIcon) {
+    regSeePassBtn.addEventListener("click", (e) => {
+      e.preventDefault(); // zapobiega wysłaniu formularza
+      const isVisible = regPasswordInput.type === "text";
+      regPasswordInput.type = isVisible ? "password" : "text";
+      regVisibilityIcon.textContent = isVisible ? "visibility" : "visibility_off";
+      regSeePassText.textContent = isVisible ? "Zobacz hasło" : "Ukryj hasło";
+  });
+}
 
   function validateLoginInputs() {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(loginEmail.value.trim());
