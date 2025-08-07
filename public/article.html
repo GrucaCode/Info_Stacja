@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Stacja</title>
+    <link rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="css/article-style.css" />
+</head>
+
+<body>
+    <nav class="hamburger-menu" id="hamburgerMenu">
+        <div class="close-btn-wrapper">
+            <p class="close-btn-text">Zamknij Menu</p>
+            <button class="hamburger-menu__close-btn close-btn">
+                <div class="close-btn__frame">
+                    <i class="material-icons-outlined close-btn__icon">close</i>
+                </div>
+            </button>
+        </div>
+        <ul class="hamburger-menu__list">
+            <li class="hamburger-menu__item hamburger-menu__item--home"><a href="index.html"
+                    class="hamburger-menu__link">Strona
+                    Główna</a></li>
+            <li class="hamburger-menu__item"><a href="#" class="hamburger-menu__link">Wyszukiwarka</a></li>
+            <li class="dropdown">
+                <div class="dropdown-toggle data-dropdown data-dropdown-cat">
+                    <p class="dropdown-text">Kategorie wiadomości</p>
+                    <button class="drop-up-btn">
+                        <p class="drop-up-btn__text">rozwiń</p>
+                        <i class="material-icons-outlined drop-up-btn__arrow">arrow_drop_down</i>
+                    </button>
+                </div>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">Polityka</a></li>
+                    <li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">Biznes</a></li>
+                    <li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">Sport</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-toggle dropdown-profile data-dropdown data-dropdown-prof">
+                    <a href="profile.html" class="dropdown-text">Twój profil</a>
+                    <button class="drop-up-btn">
+                        <p class="drop-up-btn__text">rozwiń</p>
+                        <i class="material-icons-outlined drop-up-btn__arrow">arrow_drop_down</i>
+                    </button>
+                </div>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-menu__item logout-item" style="display: none;">
+                        <a href="#" class="dropdown-menu__link" id="logout-btn">Wyloguj się
+                        </a>
+                    </li>
+                    <li class="dropdown-menu__item auth-only"><a href="profile.html?view=login"
+                            class="dropdown-menu__link">Zaloguj się</a>
+                    </li>
+                    <li class="dropdown-menu__item auth-only"><a href="profile.html?view=register"
+                            class="dropdown-menu__link">Zarejestruj
+                            się</a></li>
+                </ul>
+            </li>
+            <li class="hamburger-menu__item hamburger-menu__item--tutorial"><a href="#"
+                    class="hamburger-menu__link">Samouczek</a></li>
+            <li class="hamburger-menu__font-adjust-btn">
+                <a class="topbar-btn__link topbar-btn__link--aaa data-aaa " href="#">
+                    <i class="material-icons-outlined data-icon-a-plus">text_increase</i>
+                    <p class="topbar-btn__text">Dostosuj czcionkę</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="img/Logo.svg" alt="logo przedstawiające pociąg i podpis - Info Stacja i wszystko wiesz">
+            </div>
+            <ul class="top-bar__list">
+                <li class="top-bar__item topbar-btn">
+                    <a class="topbar-btn__link--search topbar-btn__link" href="#">
+                        <i class="material-icons-outlined">search</i>
+                        <p class="topbar-btn__text">Wyszukaj</p>
+                    </a>
+                </li>
+                <li class="top-bar__item topbar-btn top-bar__item">
+                    <a class="topbar-btn__link topbar-btn__link--aaa data-aaa data-first-aaa" href="#">
+                        <i class="material-icons-outlined data-icon-a-plus">text_increase</i>
+                        <p class="topbar-btn__text">Dostosuj czcionkę</p>
+                    </a>
+                </li>
+                <li class="top-bar__item topbar-btn">
+                    <a class="topbar-btn__link topbar-btn__link--menu" href="#">
+                        <i class="material-icons-outlined">menu</i>
+                        <p class="topbar-btn__text">Menu</p>
+                    </a>
+                </li>
+            </ul>
+            <img src="img/Menu line.svg" alt="linia dekoracyjna oddzielająca menu od tekstu">
+        </div>
+        <div class="hero">
+            <h1></h1>
+            <p class="hero__text"></p>
+        </div>
+    </header>
+
+
+    <main class="news">
+        <div class="news__content">
+            <h1 class="data-news-title news__title"></h1>
+            <img src="img/short_decor_line.svg"
+                alt="Linia dekoracyjna oddzielająca tytuł od autora i daty opublikowania artykułu"
+                class="news__decor-line">
+            <div class="news__data ">
+                <div class="news__author news-info">
+                    <p class="author__label">Autor:</p>
+                    <p class="data-news-author"></p>
+                </div>
+                <div class="news__date news-info">
+                    <p class="date__label">Data:</p>
+                    <p class="data-publish-date"></p>
+                </div>
+            </div>
+            <p class="data-news-sum news__sum"></p>
+            <div class="img-container">
+                <img class="data-news-image news__img" src="" alt="" />
+            </div>
+            <div class="data-news-text news__text"></div>
+            <div class="news__source news-source">
+                <div class="news-source__note">
+                    <i class="material-icons-outlined arrow-right">arrow_right</i>
+                    <a href="#" target="_blank" class="btn-full">Strona źródłowa artykułu</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer__categories">
+            <p class="footer__text">Kategorie:</p>
+            <ul class="footer__links1">
+                <li><a href="#" class="footer__link1">Polityka</a></li>
+                <li><a href="#" class="footer__link1">Sport</a></li>
+                <li><a href="#" class="footer__link1">Biznes</a></li>
+            </ul>
+        </div>
+        <ul class="footer__links2">
+            <li><a href="profile.html" class="footer__link2">Twoj profil</a></li>
+            <li><a href="#" class="footer__link2">Samouczek</a></li>
+        </ul>
+    </footer>
+    <div class="space"></div>
+    <nav class="bottom-nav-bar-wrapper">
+        <div class="bottom-nav-bar">
+            <img src="img/Menu line.svg" alt="linia dekoracyjna oddzielająca menu od tekstu">
+            <ul class="bottom-nav-bar__list">
+                <li>
+                    <a class="bottom-nav-bar__link bottom-nav-bar__link--help" href="#">
+                        <i class="material-icons-outlined">help_center</i>
+                        <p class="bottom-nav-bar__caption">Samouczek</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="bottom-nav-bar__link bottom-nav-bar__link--profile">
+                        <i class="material-icons-outlined">person</i>
+                        <p class="bottom-nav-bar__caption">Twój profil</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="bottom-nav-bar__link bottom-nav-bar__link--home">
+                        <i class="material-icons-outlined">home</i>
+                        <p class="bottom-nav-bar__caption">Strona główna</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <a href="#" class="btn-go-up data-btn-go-up">
+        <div class="btn-go-up__frame">
+            <i class="material-icons-outlined btn-go-up__icon">arrow_upward</i>
+            <p class="btn-go-up__text">Wróć do góry</p>
+        </div>
+    </a>
+
+    <script src="js/article.js"></script>
+    <script src="js/fontAdjust.js"></script>
+    <script src="js/updateTopPadding.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/upButton.js"></script>
+    <script src="js/hamburgerMenu.js"></script>
+</body>
+
+</html>

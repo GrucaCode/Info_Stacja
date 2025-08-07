@@ -1,0 +1,32 @@
+    .btn-go-up {
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 9999;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+        margin-bottom: 25px;
+        background-color: #020202;
+        font-size: .875rem;
+        color: #fff;
+        pointer-events: auto;
+        position: fixed;
+        bottom: 200px;
+        right: 0px;
+
+        &__frame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: #fff 1px solid;
+            padding: 13px 18px;
+        }
+    }
+
+    .visible {
+        opacity: 1;
+
+    }

@@ -1,0 +1,34 @@
+        .slider {
+            margin-top: 4px;
+            &__nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                padding-top: 15px;
+                background-color: #FFDACE;
+            }
+            &__slides {
+                position: relative;
+            }
+            &__dots {
+                margin-bottom: 15px;
+                display: flex;
+                gap: 10px;
+            }
+            .slider-nav {
+                &__arrow {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 4px;
+                    min-height: 70px;
+                    min-width: 70px;
+                    background-color: transparent;
+                }
+                &__caption {
+                    margin-top: -5px;
+                    font-size: 0.75rem;
+                }
+            }
+        }

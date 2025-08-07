@@ -1,0 +1,43 @@
+    .bottom-nav-bar-wrapper {
+        position: fixed;
+        bottom: 0;
+        z-index: 1000;
+        // width: 100vw;
+        width: 100%;
+        background-color: #fff;
+    }
+    .bottom-nav-bar {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        &__list {
+            margin: 10px 0 25px 0;
+            display: flex;
+            justify-content: space-around;
+            gap: 5px;
+            li {
+                list-style-type: none;
+                text-align: center;
+                display: block;
+            }
+        }
+        &__link {
+            display: block;
+            min-height: 44px;
+            &--profile {
+                min-width: 61px;
+            }
+            &--help {
+                min-width: 70px;
+            }
+            &--home {
+                min-width: 87px;
+            }
+        }
+        &__caption {
+            font-size: .75rem;
+            margin-top: -5px;
+        }
+    }

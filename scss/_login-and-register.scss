@@ -1,0 +1,293 @@
+.login-sec {
+    &__wrapper {
+        padding: 0 30px 30px;
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+    }
+    &__h {
+        font-size: 1.25rem;
+    }
+    .arrow-right {
+        font-size: 50px;
+        color: #E99576;
+    }
+    &__quest {
+        font-size: .875rem;
+        margin: 20px 0 10px 0;
+
+        &--down {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    
+    .show-register-btn {
+        display: flex;
+        align-items: center;
+        align-self: center;
+        margin-bottom: 50px;
+        background-color: transparent;
+        padding: 0 25px 20px;
+        margin: 0 auto 50px auto;
+        color: #005F67;
+        
+        .show-register-arrow {
+            font-size: 30px;
+            color: #005F67;
+        } 
+        &__text {
+            font-size: .875rem;
+            text-decoration: underline;
+        }
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+
+        &__label {
+            font-size: .875rem
+        }
+        &__input {
+            margin-bottom: 20px;
+            padding: 12px 10px;
+            border: #E99576 2px solid;
+        }
+
+        &__message {
+            font-size: .875rem;
+            color: #E40004;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .see-pass-btn-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 10px;
+
+            .see-pass-text {
+                font-size: .75rem;
+            }
+            .see-pass-btn {
+                width: 44px;
+                height: 44px;
+                padding: 3px;
+                background-color: #005F67;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+
+                &__frame {
+                    border: #fff 1px solid;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                }
+                &__visibility {
+                    color: #fff
+                }
+            }
+        }
+
+        .login-submit-btn {
+            margin: 40px 0;
+            padding: 3px;
+            background-color: #e2e2e2;
+            color: #000;
+            align-self: center;
+            cursor: not-allowed;
+            &__frame {
+                border: #000 1px solid;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 19px 49px;
+            }
+            &__text {
+                font-size: .875rem
+            }
+        }
+        .active {
+            background-color: #005F67;
+            color: #fff;
+            cursor: pointer;
+        } 
+        .frame-active {
+            border: #fff 1px solid;
+        }       
+    }
+}
+
+.register-sec {
+    &__wrapper {
+        padding: 0 30px 30px;
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+    }
+    &__h {
+        font-size: 1.25rem;
+    }
+    .arrow-right {
+        font-size: 50px;
+        color: #E99576;
+    }
+    &__quest {
+        font-size: .875rem;
+        margin: 20px 0 10px 0;
+
+        &--down {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .clean-btn-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 10px;
+        margin-bottom: 5px;
+
+        .clean-text {
+            font-size: .75rem;
+        }
+        .clean-btn {
+            width: 44px;
+            height: 44px;
+            padding: 3px;
+            background-color: #B9491D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                
+
+            &__frame {
+                border: #fff 1px solid;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+            &__visibility {
+                color: #fff
+            }
+        }
+    }
+
+    .show-login-btn {
+        display: flex;
+        align-items: center;
+        align-self: center;
+        margin-bottom: 50px;
+        background-color: transparent;
+        padding: 0 25px 20px;
+        margin: 0 auto 50px auto;
+        color: #005F67;
+        
+        .show-login-arrow {
+            font-size: 30px;
+            color: #005F67;
+        } 
+        &__text {
+            font-size: .875rem;
+            text-decoration: underline;
+        }
+    }
+
+
+    .register-form {
+        display: flex;
+        flex-direction: column;
+
+        &__label {
+            font-size: .875rem;
+        }
+        &__label-additional {
+            font-size: .875rem;
+        }
+        &__labels {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__input {
+            margin-bottom: 20px;
+            padding: 12px 10px;
+            border: #E99576 2px solid;
+        }
+
+        &__message {
+            font-size: .875rem;
+            color: #E40004;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .see-pass-btn-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 10px;
+
+            .see-pass-text {
+                font-size: .75rem;
+            }
+            .see-pass-btn {
+                width: 44px;
+                height: 44px;
+                padding: 3px;
+                background-color: #005F67;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+
+                &__frame {
+                    border: #fff 1px solid;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                }
+                &__visibility {
+                    color: #fff
+                }
+            }
+        }
+        .register-submit-btn.active {
+            background-color: #005F67;
+            color: #fff;
+            cursor: pointer;
+            .register-submit-btn__frame.frame-active {
+                border: #fff 1px solid;
+            }  
+        }     
+
+        .register-submit-btn {
+            margin: 40px 0;
+            padding: 3px;
+            background-color: #e2e2e2;
+            color: #000;
+            align-self: center;
+            cursor: not-allowed;
+            &__frame {
+                border: #000 1px solid;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 19px 49px;
+            }
+            &__text {
+                font-size: .875rem
+            }
+        }
+    }
+}

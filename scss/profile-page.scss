@@ -1,0 +1,130 @@
+@use "reset.scss";
+@use "footer.scss";
+@use "top-nav-bar.scss";
+@use "bottom-nav-bar.scss";
+@use "slider.scss";
+@use "go-up-button.scss";
+@use "hero.scss";
+@use "menu-hamburger.scss";
+@use "login-and-register";
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.user-sec {
+    display: none;
+    .logout-btn-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 10px;
+        padding: 0 20px 30px 0;
+
+        .logout-btn-text {
+            font-size: .75rem;
+        }
+        .logout-btn {
+            width: 44px;
+            height: 44px;
+            padding: 3px;
+            background-color: #005F67;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #B9491D;
+            color: #fff;               
+            &__frame {
+                border: #fff 1px solid;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .data-sec {
+        margin-bottom: 80px;
+        &__wrapper {
+            margin-bottom: 30px;
+        }
+        &__title {
+            display: flex;
+            align-items: center;
+            }
+        &__h {
+            font-size: 1.25rem;
+        }
+        .arrow-right {
+            font-size: 50px;
+            color: #E99576;
+        }
+
+        .user-data {
+            &__img-info1 {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+            &__info1 {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            &__info2 {
+                display: flex;
+            }
+            &__item {
+                font-size: .875rem;
+                &--email {
+                    padding-top: 10px;
+                    padding-left: 30px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+            }
+            &__value {
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+
+
+.profile-drop-up-btn  {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 10px;
+    background-color: transparent;
+    &__text {
+        font-size: .875rem
+    }
+}
+
+.saved-sec {
+    margin-bottom: 80px;
+    &__wrapper {
+        margin-bottom: 30px;
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        }
+    &__h {
+        font-size: 1.25rem;
+    }
+    .arrow-right {
+        font-size: 50px;
+        color: #E99576;
+    }
+}
+
+#register-section {
+  display: none;
+}

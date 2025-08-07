@@ -1,0 +1,121 @@
+
+
+.hamburger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 99999;
+    display: none;
+    flex-direction: column;
+    padding: 30px;
+    overflow-y: auto;
+    font-family: 'Poppins', sans-serif;
+
+    li {
+        list-style-type: none;
+        font-size: .875rem;
+    }
+
+    &__item {
+        display: block;
+        border-bottom: #020202 2px solid;
+        font-weight: 600;
+        &--home, &--tutorial {
+            border-top: #020202 2px solid;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 20px 0;
+    }
+
+    &__font-adjust-btn {
+        display: flex;
+        justify-content: end;
+        margin-top: 30px;
+    }
+
+    .dropdown {
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            border-bottom: #020202 2px solid;
+            font-weight: 600;
+            .drop-up-btn {
+                display: flex;
+                align-items: center;
+                padding: 20px;
+                color: #B9491D;
+                background-color: transparent;
+                &__text {
+                    font-size: .75rem
+                }
+            }
+        }
+        .dropdown-profile {
+            border-top: #020202 2px solid;
+            .dropdown-text {
+                display: block;
+                padding: 20px 70px 20px 0px;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        display: none;
+        &__item {
+            padding: 20px 0px 20px 30px;
+        }
+
+        &__item {
+            display: block;
+        }
+    }
+
+    .dropdown.open .dropdown-menu {
+    display: block;
+    }
+
+    .close-btn-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 30px;
+        .close-btn {
+            width: 44px;
+            height: 44px;
+            padding: 3px;
+            background-color: #B9491D;
+            font-size: .875rem;
+            color: #fff;
+
+            &__frame {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: #fff 1px solid;
+                width: 38px;
+                height: 38px;
+            }
+        }
+        .close-btn-text {
+            font-size: .75rem;
+        }
+    }
+}
+
+.hamburger-menu.active {
+    display: flex;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
