@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info Stacja - Artykuł</title>
+    <title>Info Stacja - Wyszukiwarka</title>
     <link rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="css/article-style.css" />
+    <link rel="stylesheet" href="css/search-style.css" />
+
 </head>
 
 <body>
@@ -40,9 +41,9 @@
                     </button>
                 </div>
                 <ul class="dropdown-menu">
-                    <li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">Polityka</a></li>
-                    <li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">Biznes</a></li>
-                    <li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">Sport</a></li>
+                    <li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">Podróże</a></li>
+                    <li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">Technologia</a></li>
+                    <li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">Kultura</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -104,43 +105,54 @@
             <img src="img/Menu line.svg" alt="linia dekoracyjna oddzielająca menu od tekstu">
         </div>
         <div class="hero">
-            <h1></h1>
-            <p class="hero__text"></p>
+            <h1>Wyszukiwarka</h1>
+            <p class="hero__text">Tutaj znajdziesz informacje za pomocą wyszukiwania głosowego lub poprzez
+                wpisywanie fraz</p>
         </div>
     </header>
+    <main>
+
+        <section class="search-sec">
+            <div class="search-sec__title">
+                <i class="material-icons-outlined arrow-right">arrow_right</i>
+                <h2 class="search-sec__h">Wyszukaj wiadomości</h2>
+            </div>
+            <div class="search-sec__wrapper search">
+                <div class="search__container">
+                    <button class="search-btn">
+                        <div class="search-btn__frame">
+                            <i class="material-icons-outlined search-btn__glass" id="search-icon">search</i>
+                        </div>
+                    </button>
+                    <input type="text" id="searchQuery" placeholder="Napisz czego szukasz">
+                </div>
+            </div>
+        </section>
+
+        <section class="articles-sec">
+            <div class="articles-sec__title">
+                <i class="material-icons-outlined arrow-right">arrow_right</i>
+                <h2 class="articles-sec__h">Najnowsze wiadomości</h2>
+            </div>
+            <div class="slider">
+                <div class="slider__nav slider-nav">
+                    <button class="slider-nav__arrow slider-nav__arrow--prev">
+                        <i class="material-icons-outlined">arrow_back</i>
+                        <p class="slider-nav__caption">Poprzedni</p>
+                    </button>
+                    <div class="material-icons-outlined slider__dots">
+                    </div>
+                    <button class="slider-nav__arrow  slider-nav__arrow--next">
+                        <i class="material-icons-outlined">arrow_forward</i>
+                        <p class="slider-nav__caption">Następny</p>
+                    </button>
+                </div>
+                <div class="slider__slides"></div>
+            </div>
+        </section>
 
 
-    <main class="news">
-        <div class="news__content">
-            <h1 class="data-news-title news__title"></h1>
-            <img src="img/short_decor_line.svg"
-                alt="Linia dekoracyjna oddzielająca tytuł od autora i daty opublikowania artykułu"
-                class="news__decor-line">
-            <div class="news__data ">
-                <div class="news__author news-info">
-                    <p class="author__label">Autor:</p>
-                    <p class="data-news-author"></p>
-                </div>
-                <div class="news__date news-info">
-                    <p class="date__label">Data:</p>
-                    <p class="data-publish-date"></p>
-                </div>
-            </div>
-            <p class="data-news-sum news__sum"></p>
-            <div class="img-container">
-                <img class="data-news-image news__img" src="" alt="" />
-            </div>
-            <div class="data-news-text news__text"></div>
-            <div class="news__source news-source">
-                <div class="news-source__note">
-                    <i class="material-icons-outlined arrow-right">arrow_right</i>
-                    <a href="#" target="_blank" class="btn-full">Strona źródłowa artykułu</a>
-                </div>
-            </div>
-        </div>
     </main>
-
-
     <footer class="footer">
         <div class="footer__categories">
             <p class="footer__text">Kategorie:</p>
@@ -189,12 +201,13 @@
         </div>
     </a>
 
-    <script src="js/article.js"></script>
     <script src="js/fontAdjust.js"></script>
     <script src="js/updateTopPadding.js"></script>
     <script src="js/test.js"></script>
+    <script src="js/news.js"></script>
     <script src="js/upButton.js"></script>
     <script src="js/hamburgerMenu.js"></script>
+
 </body>
 
 </html>
