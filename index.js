@@ -32,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/news', newsRoutes);
 app.use('/api', authRoutes);  // dodane
+// app.use('/api', searchRoutes);
 
 app.listen(PORT, () => {
   console.log(`Serwer działa na http://localhost:${PORT}`);

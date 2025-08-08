@@ -118,14 +118,44 @@
                 <h2 class="search-sec__h">Wyszukaj wiadomości</h2>
             </div>
             <div class="search-sec__wrapper search">
+                <div class="clean-btn-wrapper">
+                    <p class="clean-text">Wyczyść formularz</p>
+                    <button type="button" class="clean-btn">
+                        <div class="clean-btn__frame">
+                            <i class="material-icons-outlined clean-btn__visibility"
+                                id="brush-icon">cleaning_services</i>
+                        </div>
+                    </button>
+                </div>
+
                 <div class="search__container">
+
                     <button class="search-btn">
                         <div class="search-btn__frame">
                             <i class="material-icons-outlined search-btn__glass" id="search-icon">search</i>
                         </div>
                     </button>
-                    <input type="text" id="searchQuery" placeholder="Napisz czego szukasz">
+
+                    <div class="input-container">
+                        <input type="text" id="searchQuery" placeholder="Jakiej wiadomości szukasz?"
+                            class="search-input">
+                        <button class="mic-btn">
+                            <i class="material-icons-outlined mic-icon" id="mic-icon">mic</i>
+                        </button>
+                    </div>
+
                 </div>
+                <div class="search__info">
+                    <p class="search__text">Szukaj</p>
+                    <p class="search__text search__text--voice">Wyszukiwanie głosowe</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="result-sec">
+            <div class="result-sec__title">
+                <i class="material-icons-outlined arrow-right">arrow_right</i>
+                <h2 class="result-sec__h">Wyniki wyszukiwania</h2>
             </div>
         </section>
 
@@ -207,6 +237,7 @@
     <script src="js/news.js"></script>
     <script src="js/upButton.js"></script>
     <script src="js/hamburgerMenu.js"></script>
+    <script src="js/search.js"></script>
 
 </body>
 
