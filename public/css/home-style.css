@@ -380,7 +380,7 @@ a {
 }
 .articles-sec .article__image-container {
   width: 100%;
-  height: 215px;
+  height: auto;
   overflow: hidden;
 }
 .articles-sec .article__image {

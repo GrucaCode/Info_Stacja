@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrap = document.createElement('div');
     wrap.className = 'results';
     if (!news.length) {
-      wrap.innerHTML = `<p>Brak wyników dla podanego zapytania.</p>`;
+      wrap.innerHTML = `<p>Nie znaleziono wyników dla podanego zapytania. Użyj innego słowa lub frazy</p><img src="img/Empty_graphics.svg" alt="Grafika informująca o braku wyników">`;
       resultSec.appendChild(wrap);
       return;
     }
@@ -26,13 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'result-card';
       const img = article.image ? `<img class="result-card__img" src="${article.image}" alt="${article.title}">` : '';
       const date = article.publish_date ? new Date(article.publish_date).toLocaleDateString('pl-PL') : '';
-      const summary = article.summary || article.text || '';
+      const summary = article.summary;
+      const artText =  article.text || '';
 
       // przycisk do Twojej podstrony artykułu (jak wcześniej)
       const tmpId = `${Date.now()}-${idx}`;
       const goLocalBtn = `
         <button class="btn-read-more" data-article-id="${tmpId}">
-          <div class="btn-read-more__frame">Czytaj dalej</div>
+          <div class="btn-read-more__frame">Czytaj</div>
         </button>
       `;
 
@@ -40,11 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ${img}
         <div class="result-card__content">
           <h3 class="result-card__title">${article.title}</h3>
-          <p class="result-card__date">${date}</p>
-          <p class="result-card__sum">${summary}</p>
-          <div class="result-card__actions">
+            <div class="result-card__actions">
             ${goLocalBtn}
-            <a class="result-card__link" href="${article.url}" target="_blank" rel="noopener">Pełny artykuł</a>
+            </div>
+          <img src="img/Menu line.svg" alt="linia dekoracyjna oddzielająca menu od tekstu" class="result-card__decor-line">
+          <div class="result-card__info">
+            <p class="result-card__label">Data:</p>
+            <p class="result-card__date">${date}</p>
           </div>
         </div>
       `;
@@ -53,9 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const payload = {
         id: tmpId,
         title: article.title,
+        author: article.author,
         image: article.image,
         url: article.url,
-        text: article.text || article.summary || '',
+        text: article.text || '',
+        summary: article.summary, //dodane
         publish_date: article.publish_date,
       };
       localStorage.setItem(`article-${tmpId}`, JSON.stringify(payload));
@@ -133,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
           recog.start();
           listening = true;
-          micIcon.textContent = 'mic_off'; // zmień ikonę na "nagrywa"
+          micIcon.textContent = 'settings_voice'; // zmień ikonę na "nagrywa"
         } catch (err) {
           console.error(err);
         }
