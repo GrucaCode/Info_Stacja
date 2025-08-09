@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.querySelector('.topbar-btn__link--menu');
     const menu = document.getElementById('hamburgerMenu');
     const closeBtn = document.querySelector('.hamburger-menu__close-btn');
+    const hamburgerTutBtn = document.querySelector('.data-hamburger-tut');
     const dropdownButtons = document.querySelectorAll('.drop-up-btn');
     const borderBottom = document.querySelectorAll('.data-dropdown');
 
@@ -27,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
             menu.classList.remove('active');
             body.classList.remove('no-scroll'); // przywrócenie przewijania
         });
+    }
+    if (hamburgerTutBtn) {
+      hamburgerTutBtn.addEventListener('click', () => {
+        menu.classList.remove('active');
+        body.classList.remove('no-scroll'); // przywrócenie przewijania
+      });
     }
 
     // Obsługa dropdownów – tylko jeden otwarty na raz

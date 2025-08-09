@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="css/search-style.css" />
     <link rel="stylesheet" href="css/tutorial-style.css">
+    <link rel="stylesheet" href="css/tutorials-style.css">
     <script src="js/voice-tutorial.js"></script>
 
 
@@ -73,7 +74,7 @@
                 </ul>
             </li>
             <li class="hamburger-menu__item hamburger-menu__item--tutorial js-open-tutorial"><a href="#"
-                    class="hamburger-menu__link js-open-tutorials">Samouczek</a></li>
+                    class="hamburger-menu__link js-open-tutorials data-hamburger-tut">Samouczek</a></li>
             <li class="hamburger-menu__font-adjust-btn">
                 <a class="topbar-btn__link topbar-btn__link--aaa data-aaa " href="#">
                     <i class="material-icons-outlined data-icon-a-plus">text_increase</i>
@@ -236,31 +237,38 @@
         </div>
     </a>
 
-    <!-- Globalny pop-up z listą tutoriali -->
     <div id="tutorials-modal" class="tuts" aria-hidden="true" role="dialog" aria-modal="true"
         aria-labelledby="tuts-title">
         <div class="tuts__backdrop" data-close></div>
 
         <div class="tuts__dialog" role="document" tabindex="-1">
-            <button class="tuts__close" aria-label="Zamknij" data-close>&times;</button>
-
-            <h2 id="tuts-title" class="tuts__title">Samouczek</h2>
-            <p class="tuts__desc">Wybierz temat, który chcesz poznać:</p>
+            <div class="close-btn-wrapper">
+                <p class="close-btn-text">Zamknij</p>
+                <button class="close-btn data-close-pop-up-btn">
+                    <div class="close-btn__frame">
+                        <i class="material-icons-outlined close-btn__icon">close</i>
+                    </div>
+                </button>
+            </div>
+            <div class="tuts__wrapper">
+                <i class="material-icons-outlined tuts__icon">help_center</i>
+                <h2 id="tuts-title" class="tuts__title">Samouczek</h2>
+            </div>
+            <p class="tuts__desc">Poniżej znajdziesz instrukcje, które przeprowadzą Cię krok po kroku jak wykonać
+                poniższe działania:</p>
 
             <div class="tuts__grid">
                 <button type="button" class="tuts__btn" data-tutorial="voice">
-                    🎤 Wyszukiwanie głosowe
+                    <p class="tuts-btn-text">Wyszukiwanie głosowe</p>
                 </button>
                 <button type="button" class="tuts__btn" data-tutorial="register">
-                    👤 Jak się zarejestrować
-                </button>
-                <button type="button" class="tuts__btn" data-tutorial="login">
-                    🔐 Jak się zalogować
-                </button>
-                <button type="button" class="tuts__btn" data-tutorial="save">
-                    📌 Jak zapisywać artykuły
+                    <p class="tuts-btn-text">Zapisywanie wiadomości w profilu</p>
                 </button>
             </div>
+            <a class="topbar-btn__link topbar-btn__link--aaa data-aaa tuts__font-adj" href="#">
+                <i class="material-icons-outlined data-icon-a-plus">text_increase</i>
+                <p class="topbar-btn__text">Dostosuj czcionkę</p>
+            </a>
         </div>
     </div>
 

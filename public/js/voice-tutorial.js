@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function startVoiceTutorial() {
     const steps = [
       { element: document.querySelector('.mic-btn'),
-        intro: `Wyszukiwanie głosoweKliknij w mikrofon i powiedz co chcesz wyszukać.`,
+        intro: `Kliknij w mikrofon i powiedz co chcesz wyszukać.`,
         position: 'bottom' },
       { element: document.querySelector('#searchQuery'),
         intro: `To co powiedziałaś/eś pojawi się w tym miejscu.`,

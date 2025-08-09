@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!modal || !dialog) return;
 
   const OPENERS = document.querySelectorAll('.js-open-tutorials');
-  const CLOSERS = modal.querySelectorAll('[data-close]');
+  // const CLOSERS = modal.querySelectorAll('[data-close]');
+  const CLOSERS = modal.querySelectorAll('.data-close-pop-up-btn');
   let lastFocused = null;
 
   function openModal() {

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wrap.className = 'results';
     if (!news.length) {
       wrap.innerHTML = `<p>Nie znaleziono wyników dla podanego zapytania. Użyj innego słowa lub frazy</p><img src="img/Empty_graphics.svg" alt="Grafika informująca o braku wyników">`;
-      resultSec.appendChild(wrap);
+      // resultSec.appendChild(wrap);
       return;
     }
 
@@ -103,6 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function renderResultsAfterClear(news = []) {
+    const old = resultSec.querySelector('.results');
+    if (old) old.remove();
+    }
+
   // Zdarzenia
   searchBtn?.addEventListener('click', (e) => {
     e.preventDefault();
@@ -119,7 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
   clearBtn?.addEventListener('click', (e) => {
     e.preventDefault();
     input.value = '';
-    renderResults([]);
+    // renderResults([]);
+    renderResultsAfterClear([]);
+
   });
 
   // Wyszukiwanie głosowe (pl-PL)
