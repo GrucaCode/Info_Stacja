@@ -1,0 +1,48 @@
+// public/js/tutorials.js
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('tutorials-modal');
+  const dialog = modal?.querySelector('.tuts__dialog');
+  if (!modal || !dialog) return;
+
+  const OPENERS = document.querySelectorAll('.js-open-tutorials');
+  const CLOSERS = modal.querySelectorAll('[data-close]');
+  let lastFocused = null;
+
+  function openModal() {
+    lastFocused = document.activeElement;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+    dialog.focus();
+  }
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+    lastFocused?.focus();
+  }
+
+  OPENERS.forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); openModal(); }));
+  CLOSERS.forEach(el => el.addEventListener('click', closeModal));
+  document.addEventListener('keydown', e => {
+    if (modal.getAttribute('aria-hidden') === 'false' && e.key === 'Escape') closeModal();
+  });
+
+  // Mapowanie przycisków -> gdzie przenieść i jaki tutorial odpalić
+  const routes = {
+    voice:      { href: 'search.html',   flag: 'voice' },
+    register:   { href: 'profile.html?view=register', flag: 'register' },
+    login:      { href: 'profile.html?view=login',    flag: 'login' },
+    save:       { href: 'index.html',    flag: 'save' } // np. tutorial zapisu z poziomu głównej
+  };
+
+  modal.addEventListener('click', (e) => {
+    const btn = e.target.closest('.tuts__btn');
+    if (!btn) return;
+    const key = btn.getAttribute('data-tutorial');
+    const conf = routes[key];
+    if (!conf) return;
+
+    // ustawiamy flagę „oczekującego” tutorialu i lecimy na docelową stronę
+    try { localStorage.setItem('pendingTutorial', conf.flag); } catch {}
+    window.location.href = conf.href;
+  });
+});

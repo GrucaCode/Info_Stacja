@@ -12,8 +12,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css">
+    <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="css/search-style.css" />
+    <link rel="stylesheet" href="css/tutorial-style.css">
+    <script src="js/voice-tutorial.js"></script>
+
 
 </head>
 
@@ -67,8 +72,8 @@
                             się</a></li>
                 </ul>
             </li>
-            <li class="hamburger-menu__item hamburger-menu__item--tutorial"><a href="#"
-                    class="hamburger-menu__link">Samouczek</a></li>
+            <li class="hamburger-menu__item hamburger-menu__item--tutorial js-open-tutorial"><a href="#"
+                    class="hamburger-menu__link js-open-tutorials">Samouczek</a></li>
             <li class="hamburger-menu__font-adjust-btn">
                 <a class="topbar-btn__link topbar-btn__link--aaa data-aaa " href="#">
                     <i class="material-icons-outlined data-icon-a-plus">text_increase</i>
@@ -194,7 +199,7 @@
         </div>
         <ul class="footer__links2">
             <li><a href="profile.html" class="footer__link2">Twoj profil</a></li>
-            <li><a href="#" class="footer__link2">Samouczek</a></li>
+            <li><a href="#" class="footer__link2 js-open-tutorials">Samouczek</a></li>
         </ul>
     </footer>
     <div class="space"></div>
@@ -203,7 +208,7 @@
             <img src="img/Menu line.svg" alt="linia dekoracyjna oddzielająca menu od tekstu">
             <ul class="bottom-nav-bar__list">
                 <li>
-                    <a class="bottom-nav-bar__link bottom-nav-bar__link--help" href="#">
+                    <a class="bottom-nav-bar__link bottom-nav-bar__link--help js-open-tutorials" href="#">
                         <i class="material-icons-outlined">help_center</i>
                         <p class="bottom-nav-bar__caption">Samouczek</p>
                     </a>
@@ -231,6 +236,34 @@
         </div>
     </a>
 
+    <!-- Globalny pop-up z listą tutoriali -->
+    <div id="tutorials-modal" class="tuts" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="tuts-title">
+        <div class="tuts__backdrop" data-close></div>
+
+        <div class="tuts__dialog" role="document" tabindex="-1">
+            <button class="tuts__close" aria-label="Zamknij" data-close>&times;</button>
+
+            <h2 id="tuts-title" class="tuts__title">Samouczek</h2>
+            <p class="tuts__desc">Wybierz temat, który chcesz poznać:</p>
+
+            <div class="tuts__grid">
+                <button type="button" class="tuts__btn" data-tutorial="voice">
+                    🎤 Wyszukiwanie głosowe
+                </button>
+                <button type="button" class="tuts__btn" data-tutorial="register">
+                    👤 Jak się zarejestrować
+                </button>
+                <button type="button" class="tuts__btn" data-tutorial="login">
+                    🔐 Jak się zalogować
+                </button>
+                <button type="button" class="tuts__btn" data-tutorial="save">
+                    📌 Jak zapisywać artykuły
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/fontAdjust.js"></script>
     <script src="js/updateTopPadding.js"></script>
     <script src="js/test.js"></script>
@@ -238,6 +271,7 @@
     <script src="js/upButton.js"></script>
     <script src="js/hamburgerMenu.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/tutorials.js"></script>
 
 </body>
 

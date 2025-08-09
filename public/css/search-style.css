@@ -352,6 +352,73 @@ table {
   height: 100vh;
 }
 
+.tuts {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.tuts[aria-hidden=false] {
+  display: block;
+}
+
+.tuts__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.tuts__dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 520px);
+  max-height: 85vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.tuts__close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: transparent;
+  border: 0;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.tuts__title {
+  margin: 0 0 6px;
+}
+
+.tuts__desc {
+  margin: 0 0 12px;
+}
+
+.tuts__grid {
+  display: grid;
+  gap: 10px;
+}
+
+.tuts__btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #005F67;
+  color: #fff;
+  text-align: left;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
   color: #000;
