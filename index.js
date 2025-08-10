@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 
 import newsRoutes from './routes/news-route.js';
 import authRoutes from './routes/auth-route.js';
+import savedRoutes from './routes/saved-route.js';
 
 import sequelize from './database/db.js';
 import User from './models/User.js';
@@ -32,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/news', newsRoutes);
 app.use('/api', authRoutes);  // dodane
-// app.use('/api', searchRoutes);
+app.use('/api/saved', savedRoutes);
 
 app.listen(PORT, () => {
   console.log(`Serwer działa na http://localhost:${PORT}`);

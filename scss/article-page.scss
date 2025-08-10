@@ -95,3 +95,27 @@ a {
         }
     }
 }
+
+.save-btn {
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    margin-bottom: 25px;
+    background-color: #005F67;
+    font-size: .875rem;
+    color: #fff;
+    position: fixed;
+    bottom: 120px;
+    right: 0px;
+
+    &__frame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: #fff 1px solid;
+        padding: 13px 18px;
+    }
+}

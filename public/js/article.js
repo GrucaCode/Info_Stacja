@@ -37,5 +37,41 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".data-news-text").innerHTML = textBlocks.map(b => `<p>${b}</p>`).join("");
   // document.querySelector(".article-text").textContent = article.text;
   document.querySelector(".btn-full").href = article.url;
+
+  // od tego momentu!!
+  const saveBtn = document.getElementById('save-article-btn');
+  if (saveBtn) {
+    saveBtn.addEventListener('click', async () => {
+      try {
+        const payload = {
+          title: article.title,
+          url: article.url,
+          image: article.image,
+          summary: article.text || '',
+          publishedAt: article.publish_date || null
+        };
+        const r = await fetch('/api/saved', {
+          method: 'POST',
+          headers: { 'Content-Type':'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (r.status === 401) {
+          alert('Zaloguj się, aby zapisać artykuł.');
+          window.location.href = 'profile.html?view=login';
+          return;
+        } 
+        const data = await r.json();
+        if (data.success) {
+          alert(data.message || 'Zapisano!');
+        } else {
+          alert(data.message || 'Nie udało się zapisać.');
+        }
+      } catch (e) {
+        console.error(e);
+        alert('Błąd zapisu.');
+      }
+    });
+  }
 });
 

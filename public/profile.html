@@ -262,7 +262,24 @@
             </div>
 
             <div class="saved-sec">
-                <div class="saved-sec__title">
+                <div class="saved-sec">
+                    <div class="saved-sec__title">
+                        <i class="material-icons-outlined arrow-right">arrow_right</i>
+                        <h2 class="saved-sec__h">Zapisane wiadomości</h2>
+                    </div>
+
+                    <form id="sort-form" class="sort-form">
+                        <label for="sort" class="sort-form__label">Sortuj:</label>
+                        <select id="sort" name="sort" class="sort-form__select">
+                            <option value="newest" class="sort-form__option">od najnowszych</option>
+                            <option value="oldest" class="sort-form__option">od najstarszych</option>
+                        </select>
+                    </form>
+
+                    <div id="saved-list"></div>
+                </div>
+
+                <!-- <div class="saved-sec__title">
                     <i class="material-icons-outlined arrow-right">arrow_right</i>
                     <h2 class="saved-sec__h">Zapisane wiadomości</h2>
                 </div>
@@ -296,7 +313,7 @@
                         <p class="delete-btn__text">Usuń</p>
                     </div>
                 </button>
-            </div>
+            </div> -->
         </section>
 
     </main>

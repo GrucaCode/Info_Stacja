@@ -116,6 +116,103 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  //początek zapisywania
+  async function loadSaved(sort = 'newest') {
+  const list = document.getElementById('saved-list');
+  if (!list) return;
+  list.innerHTML = '<p>Ładowanie…</p>';
+
+  try {
+    const r = await fetch(`/api/saved?sort=${encodeURIComponent(sort)}`);
+    if (r.status === 401) {
+      list.innerHTML = '<p>Zaloguj się, aby zobaczyć zapisane wiadomości.</p>';
+      return;
+    }
+    const data = await r.json();
+    const items = data.items || [];
+    if (!items.length) {
+      list.innerHTML = '<p>Brak zapisanych wiadomości.</p>';
+      return;
+    }
+
+    // render kart
+    list.innerHTML = items.map(item => {
+      const date = item.publishedAt ? new Date(item.publishedAt).toLocaleDateString('pl-PL') : '';
+      return `
+        <div class="saved-sec__wrapper saved" data-id="${item.id}">
+          <div class="saved__img-container">
+            ${item.image ? `<img src="${item.image}" alt="" class="saved-sec__img">` : ''}
+          </div>
+          <div class="saved__content">
+            <h3 class="saved__title">${item.title}</h3>
+            <button class="btn-read-more saved__btn" data-url="${item.url}">
+              <div class="btn-read-more__frame">Czytaj</div>
+            </button>
+            <img src="img/Menu line.svg" alt="" class="saved__decor-line">
+            <div class="saved__info">
+              <p class="saved__date-label">Data:</p>
+              <p class="saved__date">${date}</p>
+            </div>
+          </div>
+          <button class="delete-btn" data-del="${item.id}">
+            <div class="delete-btn__frame">
+              <i class="material-icons-outlined delete-btn__icon">delete</i>
+              <p class="delete-btn__text">Usuń</p>
+            </div>
+          </button>
+        </div>
+      `;
+    }).join('');
+
+    // akcje: „Czytaj” i „Usuń”
+    list.querySelectorAll('.saved__btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const url = btn.getAttribute('data-url');
+        window.open(url, '_blank', 'noopener');
+      });
+    });
+
+    list.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const id = btn.getAttribute('data-del');
+        if (!confirm('Usunąć zapis?')) return;
+        const rr = await fetch(`/api/saved/${id}`, { method: 'DELETE' });
+        const dj = await rr.json();
+        if (dj.success) {
+          const wrap = list.querySelector(`[data-id="${id}"]`);
+          wrap?.remove();
+          if (!list.children.length) list.innerHTML = '<p>Brak zapisanych wiadomości.</p>';
+        } else {
+          alert(dj.message || 'Nie udało się usunąć.');
+        }
+      });
+    });
+
+  } catch (e) {
+    console.error(e);
+    list.innerHTML = '<p>Nie udało się pobrać zapisów.</p>';
+  }
+}
+
+// sortowanie
+const sortSelect = document.getElementById('sort');
+if (sortSelect) {
+  sortSelect.addEventListener('change', () => {
+    loadSaved(sortSelect.value);
+  });
+}
+
+// po potwierdzeniu zalogowania:
+fetch('/api/me')
+  .then(r => r.json())
+  .then(d => {
+    if (d.loggedIn) {
+      // …Twoje pokazywanie sekcji user…
+      loadSaved('newest'); // start
+    }
+  });
+  // koniec zapisywania
+
   // 🔴 Wylogowanie
   // const logoutBtn = document.getElementById("logout-btn");
   // if (logoutBtn) {
