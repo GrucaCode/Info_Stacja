@@ -109,8 +109,12 @@ a {
 
 .saved-sec {
     margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
     &__wrapper {
-        margin-bottom: 30px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
     }
     &__title {
         display: flex;
@@ -119,12 +123,111 @@ a {
     &__h {
         font-size: 1.25rem;
     }
+    &__img {
+        object-fit: contain;
+    }
     .arrow-right {
         font-size: 50px;
         color: #E99576;
+    }
+
+    .sort-form {
+        display: flex;
+        justify-content: center;
+        &__label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 20px 0;
+        }
+        &__select {
+            border: none;
+            padding: 20px 25px;
+            font-size: .875rem
+        }
+        &__option {
+            font-size: .875rem;
+            padding: 0 20px;
+        }
+    }
+    .delete-btn {
+        display: flex;
+        align-self: start;
+        padding: 3px;
+        background-color: #B9491D;
+        font-size: .875rem;
+        color: #fff;
+        margin-left: 30px;
+        &__frame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: #fff 1px solid;
+            padding: 18px 23px;
+        }
+        &__icon {
+            font-size: 28px;
+        }
+    }
+    .saved {
+        padding: 0 30px;
+        &__img-container {
+            width: 100%;
+            overflow: hidden;
+            height: 250px;
+        }
+        &__info {
+            display: flex;
+            gap: 10px;
+            font-size: .75rem
+        }    
+        &__decor-line {
+            display: block;
+            margin: 20px 0 10px;
+        }
+
+        &__content {
+            background-color: rgba(131, 197, 190, 0.30);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            .btn-read-more {
+                padding: 3px;
+                align-self: flex-end;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #000;
+                font-size: .875rem;
+                color: #fff;
+
+                &__frame {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: #fff 1px solid;
+                    min-width: 110px;
+                    min-height: 54px;
+                    padding: 21px 33px;
+                }
+            }
+        }
+        &__title {
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
     }
 }
 
 #register-section {
   display: none;
+}
+
+option {
+  background-color: white;
+  padding: 10px;
+}
+option:hover {
+  background-color: #005F67;
 }

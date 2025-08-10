@@ -260,11 +260,42 @@
                     <i class="material-icons-outlined profile-drop-up-btn__arrow">arrow_drop_up</i>
                 </button>
             </div>
+
             <div class="saved-sec">
                 <div class="saved-sec__title">
                     <i class="material-icons-outlined arrow-right">arrow_right</i>
                     <h2 class="saved-sec__h">Zapisane wiadomości</h2>
                 </div>
+                <div class="saved-sec__wrapper saved">
+                    <form id="sort-form" class="sort-form">
+                        <label for="sort" class="sort-form__label">Sortuj:</label>
+                        <select id="sort" name="sort" class="sort-form__select">
+                            <option value="newest" class="sort-form__option">od najstarszych</option>
+                            <option value="oldest" class="sort-form__option">od najnowszych</option>
+                        </select>
+                    </form>
+                    <div class="saved__img-container">
+                        <img src="img/globus.jpg" alt="przyklad" class="saved-sec__img">
+                    </div>
+                    <div class="saved__content">
+                        <h3 class="saved__title">tytuł</h3>
+                        <button class="btn-read-more saved__btn">
+                            <div class="btn-read-more__frame">Czytaj</div>
+                        </button>
+                        <img src="img/Menu line.svg" alt="linia dekoracyjna oddzielająca menu od tekstu"
+                            class="saved__decor-line">
+                        <div class="saved__info">
+                            <p class="saved__date-label">Data:</p>
+                            <p class="saved__date">5.05.2025</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="delete-btn">
+                    <div class="delete-btn__frame">
+                        <i class="material-icons-outlined delete-btn__icon">delete</i>
+                        <p class="delete-btn__text">Usuń</p>
+                    </div>
+                </button>
             </div>
         </section>
 
@@ -322,7 +353,6 @@
         <div class="tuts__backdrop" data-close></div>
 
         <div class="tuts__dialog" role="document" tabindex="-1">
-            <!-- <button class="tuts__close" aria-label="Zamknij" data-close>&times;</button> -->
             <div class="close-btn-wrapper">
                 <p class="close-btn-text">Zamknij</p>
                 <button class="close-btn data-close-pop-up-btn">
