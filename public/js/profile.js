@@ -165,10 +165,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }).join('');
 
     // akcje: „Czytaj” i „Usuń”
+    // list.querySelectorAll('.saved__btn').forEach(btn => {
+    //   btn.addEventListener('click', () => {
+    //     const url = btn.getAttribute('data-url');
+    //     window.open(url, '_blank', 'noopener');
+    //   });
+    // });
+
+    // zamiast otwierać zewnętrzny URL:
     list.querySelectorAll('.saved__btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const url = btn.getAttribute('data-url');
-        window.open(url, '_blank', 'noopener');
+        const wrap = btn.closest('[data-id]');
+        const savedId = wrap?.getAttribute('data-id');
+        if (savedId) {
+        // przejdź do Twojej podstrony artykułu
+          window.location.href = `article.html?savedId=${encodeURIComponent(savedId)}`;
+        }
       });
     });
 
