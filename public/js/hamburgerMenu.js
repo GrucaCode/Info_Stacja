@@ -5,28 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburgerTutBtn = document.querySelector('.data-hamburger-tut');
     const dropdownButtons = document.querySelectorAll('.drop-up-btn');
     const borderBottom = document.querySelectorAll('.data-dropdown');
-
     const body = document.body;
 
-    // Resetuje border dolny przy ładowaniu
     borderBottom.forEach(border => {
         border.style.borderBottom = "none";
     });
 
-    // Otwórz menu
+    // Otwieranie menu
     if (menuBtn) {
         menuBtn.addEventListener('click', (e) => {
             e.preventDefault();
             menu.classList.add('active');
-            body.classList.add('no-scroll'); // blokada przewijania
+            body.classList.add('no-scroll');
         });
     }
 
-    // Zamknij menu
+    // Zamykanie menu
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             menu.classList.remove('active');
-            body.classList.remove('no-scroll'); // przywrócenie przewijania
+            body.classList.remove('no-scroll');
         });
     }
     if (hamburgerTutBtn) {
