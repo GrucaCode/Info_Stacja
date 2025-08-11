@@ -74,26 +74,56 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 🔍 Sprawdzenie logowania
-  fetch('/api/me')
-    .then(res => res.json())
-    .then(data => {
-      if (data.loggedIn) {
-        loginSection.style.display = "none";
-        registerSection.style.display = "none";
-        userSection.style.display = "block";
-        userNameSpans.forEach(span => span.textContent = data.user.firstName);
+  // fetch('/api/me')
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     if (data.loggedIn) {
+  //       loginSection.style.display = "none";
+  //       registerSection.style.display = "none";
+  //       userSection.style.display = "block";
+  //       userNameSpans.forEach(span => span.textContent = data.user.firstName);
 
-        if (firstNameEl && lastNameEl && emailEl) {
-          firstNameEl.textContent = data.user.firstName;
-          lastNameEl.textContent = data.user.lastName;
-          emailEl.textContent = data.user.email;
-        }
+  //       if (firstNameEl && lastNameEl && emailEl) {
+  //         firstNameEl.textContent = data.user.firstName;
+  //         lastNameEl.textContent = data.user.lastName;
+  //         emailEl.textContent = data.user.email;
+  //       }
+  //     } else {
+  //       loginSection.style.display = "block";
+  //       registerSection.style.display = "none";
+  //       userSection.style.display = "none";
+  //     }
+  //   });
+
+  fetch('/api/me')
+  .then(res => res.json())
+  .then(data => {
+    if (data.loggedIn) {
+      // pokaż sekcję użytkownika
+      loginSection.style.display = "none";
+      registerSection.style.display = "none";
+      userSection.style.display = "block";
+      userNameSpans.forEach(span => span.textContent = data.user.firstName);
+
+      if (firstNameEl && lastNameEl && emailEl) {
+        firstNameEl.textContent = data.user.firstName;
+        lastNameEl.textContent = data.user.lastName;
+        emailEl.textContent = data.user.email;
+      }
+    } else {
+      // NIE nadpisuj, jeśli w URL jest ?view=register
+      if (view === "register") {
+        loginSection.style.display = "none";
+        registerSection.style.display = "block";
+        userSection.style.display = "none";
       } else {
+        // domyślnie login (także dla ?view=login lub braku parametru)
         loginSection.style.display = "block";
         registerSection.style.display = "none";
         userSection.style.display = "none";
       }
-    });
+    }
+  });
 
   // 🔐 Logowanie
   document.getElementById("login-form").addEventListener("submit", async (e) => {

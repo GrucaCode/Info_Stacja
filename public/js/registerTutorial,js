@@ -1,0 +1,26 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+  function startregisterTutorial() {
+    const steps = [
+      { element: document.querySelector('.topbar-btn'),
+        intro: `Kliknij w ikonkę Menu`,
+        position: 'bottom' },
+      { element: document.querySelector('.drop-up-btn'),
+        intro: `Następnie rozwiń zakładkę Twój Profil`,
+        position: 'bottom' },
+      { element: document.querySelector('.search-btn'),
+        intro: `Kliknij w przycisk lupy lub wciśnij Enter, aby wyszukać podane słowo lub zdanie.`,
+        position: 'bottom' },
+      { element: document.querySelector('.data-clean-btn'),
+        intro: `Klikając w ten przycisk możesz wyczyścić pole wyszukiwania`,
+        position: 'bottom' },
+      { element: document.querySelector('.result-sec'),
+        intro: `Wyniki wyszukiwania pojawią się tutaj.`, position: 'top' }
+    ];
+    introJs().setOptions({
+      steps, nextLabel:'Dalej', prevLabel:'Wstecz', doneLabel:'Zakończ', skipLabel:'Pomiń',
+      showProgress:true, showBullets:false
+    }).start();
+  }
+
+});

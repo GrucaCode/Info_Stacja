@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
       { element: document.querySelector('.search-btn'),
         intro: `Kliknij w przycisk lupy lub wciśnij Enter, aby wyszukać podane słowo lub zdanie.`,
         position: 'bottom' },
+      { element: document.querySelector('.data-clean-btn'),
+        intro: `Klikając w ten przycisk możesz wyczyścić pole wyszukiwania`,
+        position: 'bottom' },
       { element: document.querySelector('.result-sec'),
         intro: `Wyniki wyszukiwania pojawią się tutaj.`, position: 'top' }
     ];
