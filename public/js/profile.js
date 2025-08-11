@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = await r.json();
     const items = data.items || [];
     if (!items.length) {
-      list.innerHTML = '<p>Brak zapisanych wiadomości.</p>';
+      list.innerHTML = '<div class="no-saved"><p class="no-saved__text">Brak zapisanych wiadomości.</p><img src="img/Empty_graphics.svg" alt="Grafika informująca o braku zapisanych wiadomości" class="no-saved__img"></div>';
       return;
     }
 
@@ -181,7 +181,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (dj.success) {
           const wrap = list.querySelector(`[data-id="${id}"]`);
           wrap?.remove();
-          if (!list.children.length) list.innerHTML = '<p>Brak zapisanych wiadomości.</p>';
+          if (!list.children.length) {
+            list.innerHTML = '<div class="no-saved"><p class="no-saved__text">Brak zapisanych wiadomości.</p><img src="img/Empty_graphics.svg" alt="Grafika informująca o braku zapisanych wiadomości" class="no-saved__img"></div>';
+          }
+
         } else {
           alert(dj.message || 'Nie udało się usunąć.');
         }
@@ -214,13 +217,6 @@ fetch('/api/me')
   // koniec zapisywania
 
   // 🔴 Wylogowanie
-  // const logoutBtn = document.getElementById("logout-btn");
-  // if (logoutBtn) {
-  //   logoutBtn.addEventListener("click", async () => {
-  //     await fetch("/api/logout", { method: "POST" });
-  //     location.reload();
-  //   });
-  // }
   const logoutBtn = document.getElementById("logout-btn");
   const logoutBtnProfile = document.querySelector(".data-logout-btn");
 
