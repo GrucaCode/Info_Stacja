@@ -9,16 +9,12 @@
     }
   }
 
-  // wywołaj przy starcie
   updateTopPadding();
 
-  // wywołuj przy każdej zmianie rozmiaru czcionki
   const aaa = document.querySelector('.data-first-aaa');
   if (aaa) {
     aaa.addEventListener('click', () => {
-      setTimeout(updateTopPadding, 100); // czekamy chwilę aż zmieni się rozmiar
+      setTimeout(updateTopPadding, 100);
     });
   }
-
-  // wywołuj też przy zmianie rozmiaru okna (np. orientacja mobilna)
   window.addEventListener('resize', updateTopPadding);

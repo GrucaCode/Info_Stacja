@@ -3,19 +3,18 @@ import SavedArticle from '../models/SavedArticle.js';
 
 const router = express.Router();
 
-// middleware: tylko zalogowaniu
+// middleware
 function requireAuth(req, res, next) {
   if (!req.session?.user) return res.status(401).json({ success:false, message:'Musisz być zalogowany' });
   next();
 }
 
-// POST /api/saved  (zapisz artykuł)
+// zapisywanie artykułu
 router.post('/', requireAuth, async (req, res) => {
   try {
     const { title, url, image, summary, publishedAt } = req.body;
     if (!title || !url) return res.status(400).json({ success:false, message:'Brak wymaganych pól' });
 
-    // opcjonalnie: unikalność per user+url
     const existing = await SavedArticle.findOne({ where: { userId: req.session.user.id, url } });
     if (existing) return res.status(200).json({ success:true, message:'Już zapisane' });
 
@@ -33,7 +32,6 @@ router.post('/', requireAuth, async (req, res) => {
   }
 });
 
-// GET /api/saved?sort=newest|oldest  (lista zapisanych)
 router.get('/', requireAuth, async (req, res) => {
   try {
     const sort = (req.query.sort || 'newest');
@@ -49,7 +47,6 @@ router.get('/', requireAuth, async (req, res) => {
   }
 });
 
-// DELETE /api/saved/:id  (usuń pojedynczy)
 router.delete('/:id', requireAuth, async (req, res) => {
   try {
     const { id } = req.params;

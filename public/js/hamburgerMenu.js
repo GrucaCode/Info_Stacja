@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburgerTutBtn) {
       hamburgerTutBtn.addEventListener('click', () => {
         menu.classList.remove('active');
-        body.classList.remove('no-scroll'); // przywrócenie przewijania
+        body.classList.remove('no-scroll');
       });
     }
 
-    // Obsługa dropdownów – tylko jeden otwarty na raz
+    // Dropdowns
     dropdownButtons.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const clickedDropdown = btn.closest('.dropdown');
             const isAlreadyOpen = clickedDropdown.classList.contains('open');
 
-            // Zamknij wszystkie dropdowny
             document.querySelectorAll('.dropdown.open').forEach(dropdown => {
                 dropdown.classList.remove('open');
                 const text = dropdown.querySelector('.drop-up-btn__text');
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (icon) icon.textContent = 'arrow_drop_down';
             });
 
-            // Jeśli kliknięty był zamknięty – otwórz go
             if (!isAlreadyOpen) {
                 clickedDropdown.classList.add('open');
                 const text = btn.querySelector('.drop-up-btn__text');
@@ -60,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (icon) icon.textContent = 'arrow_drop_up';
             }
 
-            // Resetuj border-bottom (jeśli potrzebne)
             borderBottom.forEach(border => {
                 border.style.borderBottom = "none";
             });
@@ -68,7 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// 🔍 Sprawdzenie czy użytkownik jest zalogowany
+// Użytkownik zalogowany - wyświetla się wyloguj
+// Użytkownik niezalogowany - wyświetla się zarejstruj się i zaloguj się
 fetch('/api/me')
   .then(res => res.json())
   .then(data => {
@@ -84,7 +82,6 @@ fetch('/api/me')
     }
   });
 
-// 🚪 Obsługa kliknięcia "Wyloguj się"
 document.addEventListener('click', async (e) => {
   if (e.target.id === 'logout-btn') {
     e.preventDefault();

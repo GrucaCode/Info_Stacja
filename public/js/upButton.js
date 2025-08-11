@@ -1,4 +1,3 @@
-
 const goUpBtn = document.querySelector('.data-btn-go-up');
 
 window.addEventListener('scroll', () => {

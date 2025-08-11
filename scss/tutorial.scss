@@ -1,9 +1,7 @@
-/* balonik */
 .introjs-tooltip {
   font-family: 'Poppins', sans-serif;
   border-radius: 0;
 }
-
 .introjs-button:focus .introjs-nextbutton {
     outline: 0; 
     text-decoration: none;
@@ -13,11 +11,9 @@
     color: #fff;
     box-shadow: none;
 }
-
 .introjs-button {
     text-shadow: none;
 }
-
 .introjs-nextbutton {
   background-color: #005F67 !important;
   color: #fff !important;
@@ -27,7 +23,6 @@
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
 }
-
 .introjs-prevbutton {
   background-color: #B9491D !important;
   color: #fff !important;
@@ -37,8 +32,6 @@
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
 }
-
-
 .introjs-skipbutton {
     right: 5px;
     width: 80px;
@@ -46,12 +39,10 @@
     font-family: 'Poppins', sans-serif;
     color: #000;
 }
-
 .introjs-tooltiptext {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
 }
-
 .introjs-progressbar {
     background-color: #005F67;
 }

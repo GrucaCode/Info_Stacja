@@ -44,9 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     registerSection.style.display = "block";
   }
   else {
-    // Domyślna sytuacja – jeśli użytkownik nie jest zalogowany
-    // loginSection.style.display = "block";
-    // registerSection.style.display = "none";
     userSection.style.display = "none";
     if (view === "register") {
       loginSection.style.display = "none";
@@ -57,8 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   
-  
-  // 🧠 Przełączanie widoku
+  // Przełączanie widoku logowania i rejestracji
   if (toggleToLoginBtn) {
     toggleToLoginBtn.addEventListener("click", () => {
       registerSection.style.display = "none";
@@ -73,33 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 🔍 Sprawdzenie logowania
-  // fetch('/api/me')
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     if (data.loggedIn) {
-  //       loginSection.style.display = "none";
-  //       registerSection.style.display = "none";
-  //       userSection.style.display = "block";
-  //       userNameSpans.forEach(span => span.textContent = data.user.firstName);
-
-  //       if (firstNameEl && lastNameEl && emailEl) {
-  //         firstNameEl.textContent = data.user.firstName;
-  //         lastNameEl.textContent = data.user.lastName;
-  //         emailEl.textContent = data.user.email;
-  //       }
-  //     } else {
-  //       loginSection.style.display = "block";
-  //       registerSection.style.display = "none";
-  //       userSection.style.display = "none";
-  //     }
-  //   });
-
+  // Sprawdzenie czy użytkownik jest zalogowny - wyświetlenie odpowiedniego widoku
   fetch('/api/me')
   .then(res => res.json())
   .then(data => {
     if (data.loggedIn) {
-      // pokaż sekcję użytkownika
+      // Jeśli użytkownik jest zalogowany wyświetla się sekcja użytkownika z danymi i zapisanymi wiadomościami
       loginSection.style.display = "none";
       registerSection.style.display = "none";
       userSection.style.display = "block";
@@ -111,13 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
         emailEl.textContent = data.user.email;
       }
     } else {
-      // NIE nadpisuj, jeśli w URL jest ?view=register
       if (view === "register") {
         loginSection.style.display = "none";
         registerSection.style.display = "block";
         userSection.style.display = "none";
       } else {
-        // domyślnie login (także dla ?view=login lub braku parametru)
         loginSection.style.display = "block";
         registerSection.style.display = "none";
         userSection.style.display = "none";
@@ -125,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 🔐 Logowanie
+  // Logowanie
   document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -146,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  //początek zapisywania
+  // Zapisywanie wiadomości 
   async function loadSaved(sort = 'newest') {
   const list = document.getElementById('saved-list');
   if (!list) return;
@@ -165,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // render kart
+    // Umieszczenie zapisanych wiadomości w profilu
     list.innerHTML = items.map(item => {
       const date = item.publishedAt ? new Date(item.publishedAt).toLocaleDateString('pl-PL') : '';
       return `
@@ -194,26 +167,18 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     }).join('');
 
-    // akcje: „Czytaj” i „Usuń”
-    // list.querySelectorAll('.saved__btn').forEach(btn => {
-    //   btn.addEventListener('click', () => {
-    //     const url = btn.getAttribute('data-url');
-    //     window.open(url, '_blank', 'noopener');
-    //   });
-    // });
-
-    // zamiast otwierać zewnętrzny URL:
+    // Otwieranie zapisanego artykłu
     list.querySelectorAll('.saved__btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const wrap = btn.closest('[data-id]');
         const savedId = wrap?.getAttribute('data-id');
         if (savedId) {
-        // przejdź do Twojej podstrony artykułu
           window.location.href = `article.html?savedId=${encodeURIComponent(savedId)}`;
         }
       });
     });
 
+    // Usuwanie zapisanych wiadomości
     list.querySelectorAll('.delete-btn').forEach(btn => {
       btn.addEventListener('click', async () => {
         const id = btn.getAttribute('data-del');
@@ -239,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 }
 
-// sortowanie
+// Sortowanie zapisanych wiadomości
 const sortSelect = document.getElementById('sort');
 if (sortSelect) {
   sortSelect.addEventListener('change', () => {
@@ -247,18 +212,16 @@ if (sortSelect) {
   });
 }
 
-// po potwierdzeniu zalogowania:
 fetch('/api/me')
   .then(r => r.json())
   .then(d => {
     if (d.loggedIn) {
-      // …Twoje pokazywanie sekcji user…
-      loadSaved('newest'); // start
+
+      loadSaved('newest');
     }
   });
-  // koniec zapisywania
 
-  // 🔴 Wylogowanie
+  // Wylogowanie użytkownika
   const logoutBtn = document.getElementById("logout-btn");
   const logoutBtnProfile = document.querySelector(".data-logout-btn");
 
@@ -273,7 +236,7 @@ fetch('/api/me')
     logoutBtnProfile.addEventListener("click", handleLogout);
   }
 
-  // 📝 Rejestracja
+  // Rejestracja
   document.getElementById("register-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -300,11 +263,10 @@ fetch('/api/me')
     }
   });
 
-
-
+  // Ukrywanie i pokazywanie hasła
   if (seePassBtn && passwordInput && visibilityIcon) {
     seePassBtn.addEventListener("click", (e) => {
-      e.preventDefault(); // zapobiega wysłaniu formularza
+      e.preventDefault();
 
       const isVisible = passwordInput.type === "text";
       passwordInput.type = isVisible ? "password" : "text";
@@ -315,14 +277,14 @@ fetch('/api/me')
 
   if (regSeePassBtn && regPasswordInput && regVisibilityIcon) {
     regSeePassBtn.addEventListener("click", (e) => {
-      e.preventDefault(); // zapobiega wysłaniu formularza
+      e.preventDefault();
       const isVisible = regPasswordInput.type === "text";
       regPasswordInput.type = isVisible ? "password" : "text";
       regVisibilityIcon.textContent = isVisible ? "visibility" : "visibility_off";
       regSeePassText.textContent = isVisible ? "Zobacz hasło" : "Ukryj hasło";
   });
 }
-
+  // Aktywacja i dezaktywacja przycisku zaloguj się
   function validateLoginInputs() {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(loginEmail.value.trim());
     const passwordValid = loginPassword.value.trim().length > 0;
@@ -334,10 +296,9 @@ fetch('/api/me')
     } else {
       loginBtn.classList.remove("active");
       loginFrame.classList.remove("frame-active");
-      
     }
   }
-
+  // Aktywacja i dezaktywacja przycisku zarejestruj się
   function validateRegisterInputs() {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(registerEmail.value.trim());
     const passwordValid = registerPassword.value.trim().length > 0;
@@ -350,21 +311,16 @@ fetch('/api/me')
       registerFrame.classList.add("frame-active");
     } else {
       registerBtn.classList.remove("active");
-      // registerBtn.setAttribute("disabled", true);
       registerFrame.classList.remove("frame-active");
     }
   } 
 
-
-  //Nasłuchiwanie zmian w inputach
   loginEmail.addEventListener("input", validateLoginInputs);
   loginPassword.addEventListener("input", validateLoginInputs);
-
 
   registerFirstName.addEventListener("input", validateRegisterInputs);
   registerLastName.addEventListener("input", validateRegisterInputs);
   registerEmail.addEventListener("input", validateRegisterInputs);
   registerPassword.addEventListener("input", validateRegisterInputs);
-
 });
 

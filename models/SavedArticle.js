@@ -10,7 +10,6 @@ const SavedArticle = sequelize.define('SavedArticle', {
   publishedAt: { type: DataTypes.DATE }
 });
 
-// relacja: user ma wiele zapisów
 User.hasMany(SavedArticle, { foreignKey: 'userId', onDelete: 'CASCADE' });
 SavedArticle.belongsTo(User, { foreignKey: 'userId' });
 

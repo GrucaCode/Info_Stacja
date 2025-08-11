@@ -7,7 +7,6 @@
 @use "hero.scss";
 @use "menu-hamburger.scss";
 
-
 a {
     text-decoration: none;
     color: #000;
@@ -18,75 +17,74 @@ a {
         display: flex;
         align-items: center;
         }
-        &__h {
-            font-size: 1.25rem;
+    &__h {
+        font-size: 1.25rem;
+    }
+    .arrow-right {
+        font-size: 50px;
+        color: #E99576;
+    }
+    .article {
+        display: flex;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #FFDACE;
+        &__image-container {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
         }
-        .arrow-right {
-            font-size: 50px;
-            color: #E99576;
+        &__image {
+            z-index: 9999;
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
         }
-        .article {
+        &__content {
             display: flex;
-            display: none;
             flex-direction: column;
+            padding: 30px 30px 0;
+        }
+        &__title {
+            margin-bottom: 20px;
+        }
+        &__sum {
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .btn-read-more {
+            padding: 3px;
+            margin-bottom: 25px;
+            align-self: flex-end;
+            display: flex;
             justify-content: center;
-            background-color: #FFDACE;
+            align-items: center;
+            background-color: #005F67;
+            font-size: .875rem;
+            color: #fff;
 
-            &__image-container {
-                width: 100%;
-                height: auto;
-                overflow: hidden;
-            }
-            &__image {
-                z-index: 9999;
-                display: block;
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-            }
-            &__content {
-                display: flex;
-                flex-direction: column;
-                padding: 30px 30px 0;
-            }
-            &__title {
-                margin-bottom: 20px;
-            }
-            &__sum {
-                margin-bottom: 20px;
-                font-size: 14px;
-                font-weight: 500;
-            }
-            .btn-read-more {
-                padding: 3px;
-                margin-bottom: 25px;
-                align-self: flex-end;
+            &__frame {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: #005F67;
-                font-size: .875rem;
-                color: #fff;
-
-                &__frame {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border: #fff 1px solid;
-                    min-width: 154px;
-                    min-height: 54px;
-                    padding: 21px 33px;
-                }
+                border: #fff 1px solid;
+                min-width: 154px;
+                min-height: 54px;
+                padding: 21px 33px;
             }
-            &__line {
-                padding: 0 10px;
-            }
-            .date {
-                display: flex;
-                gap: 12px;
-                font-size: 14px;
-                font-weight: 500;
-                padding: 10px 0 10px 30px;
-            }
+        }
+        &__line {
+            padding: 0 10px;
+        }
+        .date {
+            display: flex;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 0 10px 30px;
+        }
     }
 }

@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const conf = routes[key];
     if (!conf) return;
 
-    // flaga oczekującego tutorialu
     try { localStorage.setItem('pendingTutorial', conf.flag); } catch {}
     window.location.href = conf.href;
   });

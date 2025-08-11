@@ -1,5 +1,5 @@
 import express from 'express';
-import session from 'express-session'; //dodane
+import session from 'express-session';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -13,26 +13,24 @@ import User from './models/User.js';
 const app = express();
 const PORT = 3000;
 
-// Potrzebne do __dirname w ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 🧠 Middleware
+// Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); //dodane
+app.use(express.urlencoded({ extended: true }));
 
-// ✅ Sesje
 app.use(session({
   secret: 'super-tajne-haslo',
   resave: false,
   saveUninitialized: false
-})); //dodane
+}));
 
-// Serwowanie frontu
+// front-end
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/news', newsRoutes);
-app.use('/api', authRoutes);  // dodane
+app.use('/api', authRoutes);
 app.use('/api/saved', savedRoutes);
 
 app.listen(PORT, () => {
@@ -42,7 +40,7 @@ app.listen(PORT, () => {
 (async () => {
   try {
     await sequelize.authenticate();
-    await sequelize.sync({ alter: true }); // utworzy tabele
+    await sequelize.sync({ alter: true });
     console.log('Połączono z bazą i zsynchronizowano modele.');
   } catch (err) {
     console.error('Błąd połączenia z bazą danych:', err);

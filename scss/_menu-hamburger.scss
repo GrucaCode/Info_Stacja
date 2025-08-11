@@ -1,5 +1,3 @@
-
-
 .hamburger-menu {
     position: fixed;
     top: 0;
@@ -18,7 +16,6 @@
         list-style-type: none;
         font-size: .875rem;
     }
-
     &__item {
         display: block;
         border-bottom: #020202 2px solid;
@@ -27,18 +24,15 @@
             border-top: #020202 2px solid;
         }
     }
-
     &__link {
         display: block;
         padding: 20px 0;
     }
-
     &__font-adjust-btn {
         display: flex;
         justify-content: end;
         margin-top: 30px;
     }
-
     .dropdown {
         .dropdown-toggle {
             display: flex;
@@ -66,7 +60,6 @@
             }
         }
     }
-
     .dropdown-menu {
         display: none;
         &__item {
@@ -77,11 +70,9 @@
             display: block;
         }
     }
-
     .dropdown.open .dropdown-menu {
     display: block;
     }
-
     .close-btn-wrapper {
         display: flex;
         align-items: center;
@@ -110,11 +101,9 @@
         }
     }
 }
-
 .hamburger-menu.active {
     display: flex;
 }
-
 .no-scroll {
     overflow: hidden;
     height: 100vh;

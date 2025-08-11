@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 
 router.get('/search', async (req, res) => {
   const q = (req.query.q || '').trim();
-  const categories = (req.query.categories || '').trim(); // opcjonalnie: "politics,sports,business"
+  const categories = (req.query.categories || '').trim();
   if (!q) return res.status(400).json({ success: false, message: 'Brak zapytania q' });
 
   const params = new URLSearchParams({

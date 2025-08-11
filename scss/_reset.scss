@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
 }
-
 html,
 body {
     font-size: 1rem;
@@ -13,36 +12,28 @@ body {
     height: 100%;
     background-color: #fff;
 }
- 
 html {
-    // font-size: 62.5%;
     scroll-behavior: smooth;
 }
- 
 a {
     text-decoration: none;
 }
- 
 img {
 	height: auto;
 }
- 
 input,
 button,
 textarea,
 select {
     font-family: inherit;
 }
- 
 button {
     border: none;
     cursor: pointer;
 }
- 
 textarea {
     resize: vertical;
 }
- 
 table {
     border-collapse: collapse;
     border-spacing: 0;

@@ -61,7 +61,6 @@ a {
             font-size: 50px;
             color: #E99576;
         }
-
         .user-data {
             &__img-info1 {
                 display: flex;
@@ -92,8 +91,6 @@ a {
         }
     }
 }
-
-
 
 .profile-drop-up-btn  {
     display: flex;
@@ -132,7 +129,6 @@ a {
         font-size: 50px;
         color: #E99576;
     }
-
     .sort-form {
         display: flex;
         justify-content: center;
@@ -237,7 +233,6 @@ option {
 option:hover {
   background-color: #005F67;
 }
-
 #saved-list {
     overflow-x: hidden;
     overflow-y: auto;
@@ -245,7 +240,6 @@ option:hover {
     border-top: 2px #ccc solid;
     border-bottom: 2px #ccc solid;
 }
-
 .no-saved {
     width: 249px;
     position: relative;

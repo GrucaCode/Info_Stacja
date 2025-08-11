@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let currentIndex = 0;
 
-      // 🔁 Dodaj slajdy i kropki
+      // Dodanie slajdów i kropek do nawigacji slajdera
       articles.forEach((article, index) => {
         const slide = document.createElement('div');
         slide.classList.add('article');
@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
           window.location.href = `article.html?id=${index}`;
         });
 
-        // 🔘 Dodaj kropki
         const dot = document.createElement('i');
         dot.className = 'material-icons-outlined slider__dot';
         dot.textContent = index === 0 ? 'radio_button_checked' : 'brightness_1';
@@ -62,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const slides = document.querySelectorAll('.article');
       const dots = document.querySelectorAll('.slider__dot');
 
-      // ▶ Funkcja zmiany slajdu
+      // Funkcja zmiany slajdu
       function showSlide(index) {
         slides.forEach((slide, i) => {
           slide.style.display = i === index ? 'block' : 'none';
@@ -71,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentIndex = index;
       }
 
-      // ◀/▶ Obsługa strzałek
+      // Strzałki: następny, poprzedni
       document.querySelector('.slider-nav__arrow--next').addEventListener('click', () => {
         const next = (currentIndex + 1) % slides.length;
         showSlide(next);
@@ -82,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showSlide(prev);
       });
 
-      // 🔘 Obsługa kliknięcia w kropkę
+      // Kliknięcie w kropkę do nawigacji slajdera
       dots.forEach(dot => {
         dot.addEventListener('click', () => {
           const index = parseInt(dot.dataset.index);

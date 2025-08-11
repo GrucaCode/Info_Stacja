@@ -22,8 +22,6 @@
             justify-content: center;
         }
     }
-
-    
     .show-register-btn {
         display: flex;
         align-items: center;
@@ -43,7 +41,6 @@
             text-decoration: underline;
         }
     }
-
     .login-form {
         display: flex;
         flex-direction: column;
@@ -56,7 +53,6 @@
             padding: 12px 10px;
             border: #E99576 2px solid;
         }
-
         &__message {
             font-size: .875rem;
             color: #E40004;
@@ -68,7 +64,6 @@
             align-items: center;
             justify-content: end;
             gap: 10px;
-
             .see-pass-text {
                 font-size: .75rem;
             }
@@ -80,8 +75,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                
-
                 &__frame {
                     border: #fff 1px solid;
                     display: flex;
@@ -95,7 +88,6 @@
                 }
             }
         }
-
         .login-submit-btn {
             margin: 40px 0;
             padding: 3px;
@@ -155,7 +147,6 @@
         justify-content: end;
         gap: 10px;
         margin-bottom: 5px;
-
         .clean-text {
             font-size: .75rem;
         }
@@ -167,8 +158,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-                
-
             &__frame {
                 border: #fff 1px solid;
                 display: flex;
@@ -182,7 +171,6 @@
             }
         }
     }
-
     .show-login-btn {
         display: flex;
         align-items: center;
@@ -202,8 +190,6 @@
             text-decoration: underline;
         }
     }
-
-
     .register-form {
         display: flex;
         flex-direction: column;
@@ -223,7 +209,6 @@
             padding: 12px 10px;
             border: #E99576 2px solid;
         }
-
         &__message {
             font-size: .875rem;
             color: #E40004;
@@ -247,8 +232,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                
-
                 &__frame {
                     border: #fff 1px solid;
                     display: flex;
@@ -270,7 +253,6 @@
                 border: #fff 1px solid;
             }  
         }     
-
         .register-submit-btn {
             margin: 40px 0;
             padding: 3px;

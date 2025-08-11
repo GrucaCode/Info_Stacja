@@ -3,7 +3,6 @@ const dataSec = document.querySelector(".data-data-sec");
 const dataText = document.querySelector(".data-drop-up-text");
 const dataIcon = document.querySelector(".data-drop-up-icon");
 
-
 const toggleSection = (e) => {
     dataSec.classList.toggle('hide');
     if (dataSec.classList.contains('hide')) {

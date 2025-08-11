@@ -1,4 +1,3 @@
-// public/js/voice-tutorial.js
 document.addEventListener('DOMContentLoaded', () => {
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   const micSupported = !!SpeechRecognition;

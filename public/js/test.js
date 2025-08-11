@@ -9,16 +9,13 @@
     }
   }
 
-  // wywołaj przy starcie
   test();
 
-  // wywołuj przy każdej zmianie rozmiaru czcionki
   const aaaFooter = document.querySelector('.data-first-aaa');
   if (aaaFooter) {
     aaaFooter.addEventListener('click', () => {
-      setTimeout(test, 100); // czekamy chwilę aż zmieni się rozmiar
+      setTimeout(test, 100);
     });
   }
 
-  // wywołuj też przy zmianie rozmiaru okna (np. orientacja mobilna)
   window.addEventListener('resize', test);
