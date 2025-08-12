@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (data.success) {
       window.location.reload();
     } else {
-      document.getElementById("login-message").textContent = data.message || "Błąd logowania";
+      document.getElementById("login-message").textContent = data.message || "Błąd logowania. Spróbuj zalogować się jeszcze raz";
     }
   });
 
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
   try {
     const r = await fetch(`/api/saved?sort=${encodeURIComponent(sort)}`);
     if (r.status === 401) {
-      list.innerHTML = '<p>Zaloguj się, aby zobaczyć zapisane wiadomości.</p>';
+      list.innerHTML = '<p>Zaloguj się, aby skorzystać z funkcji zapisywania wiadomości.</p>';
       return;
     }
     const data = await r.json();
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
 
         } else {
-          alert(dj.message || 'Nie udało się usunąć.');
+          alert(dj.message || 'Nie udało się usunąć wiadomości. Błąd jest po stronie aplikacji, zgłoś do nas ten incydent, a my postaramy się jak najszybciej go rozwiązać');
         }
       });
     });

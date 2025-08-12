@@ -195,7 +195,7 @@ table {
 }
 .slider .slider-nav__caption {
   margin-top: -5px;
-  font-size: 0.75rem;
+  font-size: 12px;
 }
 
 .btn-go-up {
@@ -239,6 +239,7 @@ table {
 .hero h1 {
   font-size: 1.5rem;
   margin-bottom: 25px;
+  overflow-wrap: break-word;
 }
 .hero__text {
   font-size: 1rem;
@@ -431,6 +432,9 @@ a {
   width: 100%;
   height: 100%;
 }
+.search-sec__wrapper .search__text--voice {
+  text-align: right;
+}
 .search-sec__wrapper .search__info {
   margin-top: 10px;
   display: flex;
@@ -462,7 +466,7 @@ a {
   width: 100%;
   border: none;
   padding: 0 10px;
-  font-size: 0.875rem;
+  font-size: 14px;
 }
 
 .result-sec {
@@ -477,6 +481,7 @@ a {
 }
 .result-sec__h {
   font-size: 1.25rem;
+  overflow-wrap: break-word;
 }
 .result-sec .arrow-right {
   font-size: 50px;
@@ -600,7 +605,7 @@ a {
 }
 .articles-sec .article__sum {
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 .articles-sec .article .btn-read-more {
@@ -629,9 +634,13 @@ a {
 .articles-sec .article .date {
   display: flex;
   gap: 12px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   padding: 10px 0 10px 30px;
+}
+
+.slider__nav {
+  background-color: rgba(131, 197, 190, 0.3);
 }
 
 /*# sourceMappingURL=search-style.css.map */

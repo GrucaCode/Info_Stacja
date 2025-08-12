@@ -142,10 +142,17 @@ a {
             padding: 20px 25px;
             font-size: .875rem
         }
+        .select-font-increase {
+            max-width: 300px;
+        }
         &__option {
             font-size: .875rem;
             padding: 0 20px;
         }
+    }
+    .sort-form-font-increase {
+        flex-direction: column;
+        align-items: center;
     }
     .delete-btn {
         display: flex;

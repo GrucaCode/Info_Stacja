@@ -195,7 +195,7 @@ table {
 }
 .slider .slider-nav__caption {
   margin-top: -5px;
-  font-size: 0.75rem;
+  font-size: 12px;
 }
 
 .btn-go-up {
@@ -239,6 +239,7 @@ table {
 .hero h1 {
   font-size: 1.5rem;
   margin-bottom: 25px;
+  overflow-wrap: break-word;
 }
 .hero__text {
   font-size: 1rem;
@@ -403,6 +404,7 @@ table {
   margin-bottom: 20px;
   padding: 12px 10px;
   border: #E99576 2px solid;
+  font-size: 0.875rem;
 }
 .login-sec .login-form__message {
   font-size: 0.875rem;
@@ -544,7 +546,9 @@ table {
   font-size: 0.875rem;
 }
 .register-sec .register-form__label-additional {
-  font-size: 0.875rem;
+  font-size: 14px;
+  overflow-wrap: break-word;
+  max-width: 210px;
 }
 .register-sec .register-form__labels {
   display: flex;
@@ -554,6 +558,7 @@ table {
   margin-bottom: 20px;
   padding: 12px 10px;
   border: #E99576 2px solid;
+  font-size: 0.875rem;
 }
 .register-sec .register-form__message {
   font-size: 0.875rem;
@@ -698,6 +703,11 @@ a {
   font-weight: 600;
 }
 
+.value-email-font-increase {
+  overflow-wrap: break-word;
+  min-width: 300px;
+}
+
 .profile-drop-up-btn {
   display: flex;
   align-items: center;
@@ -750,9 +760,16 @@ a {
   padding: 20px 25px;
   font-size: 0.875rem;
 }
+.saved-sec .sort-form .select-font-increase {
+  max-width: 300px;
+}
 .saved-sec .sort-form__option {
   font-size: 0.875rem;
   padding: 0 20px;
+}
+.saved-sec .sort-form-font-increase {
+  flex-direction: column;
+  align-items: center;
 }
 .saved-sec .delete-btn {
   display: flex;

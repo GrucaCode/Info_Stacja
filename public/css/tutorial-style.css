@@ -1,4 +1,3 @@
-/* balonik */
 .introjs-tooltip {
   font-family: "Poppins", sans-serif;
   border-radius: 0;
@@ -24,7 +23,7 @@
   border: 0;
   border-radius: 0;
   padding: 20px 32px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -34,21 +33,21 @@
   border: 0;
   border-radius: 0;
   padding: 20px 25px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
 
 .introjs-skipbutton {
   right: 5px;
   width: 80px;
-  font-size: 14px;
+  font-size: 20px;
   font-family: "Poppins", sans-serif;
   color: #000;
 }
 
 .introjs-tooltiptext {
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .introjs-progressbar {

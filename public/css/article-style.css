@@ -195,7 +195,7 @@ table {
 }
 .slider .slider-nav__caption {
   margin-top: -5px;
-  font-size: 0.75rem;
+  font-size: 12px;
 }
 
 .btn-go-up {
@@ -239,6 +239,7 @@ table {
 .hero h1 {
   font-size: 1.5rem;
   margin-bottom: 25px;
+  overflow-wrap: break-word;
 }
 .hero__text {
   font-size: 1rem;

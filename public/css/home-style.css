@@ -195,7 +195,7 @@ table {
 }
 .slider .slider-nav__caption {
   margin-top: -5px;
-  font-size: 0.75rem;
+  font-size: 12px;
 }
 
 .btn-go-up {
@@ -239,6 +239,7 @@ table {
 .hero h1 {
   font-size: 1.5rem;
   margin-bottom: 25px;
+  overflow-wrap: break-word;
 }
 .hero__text {
   font-size: 1rem;
@@ -400,7 +401,7 @@ a {
 }
 .articles-sec .article__sum {
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 .articles-sec .article .btn-read-more {
@@ -429,7 +430,7 @@ a {
 .articles-sec .article .date {
   display: flex;
   gap: 12px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   padding: 10px 0 10px 30px;
 }

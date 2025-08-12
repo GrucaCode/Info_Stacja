@@ -52,6 +52,7 @@
             margin-bottom: 20px;
             padding: 12px 10px;
             border: #E99576 2px solid;
+            font-size: .875rem;
         }
         &__message {
             font-size: .875rem;
@@ -198,7 +199,9 @@
             font-size: .875rem;
         }
         &__label-additional {
-            font-size: .875rem;
+            font-size: 14px;
+            overflow-wrap: break-word;
+            max-width: 210px;
         }
         &__labels {
             display: flex;
@@ -208,6 +211,7 @@
             margin-bottom: 20px;
             padding: 12px 10px;
             border: #E99576 2px solid;
+            font-size: .875rem;
         }
         &__message {
             font-size: .875rem;
