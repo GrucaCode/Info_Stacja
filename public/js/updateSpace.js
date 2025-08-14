@@ -1,4 +1,4 @@
-  function test() {
+  function updateSpace() {
     const topBar = document.querySelector('.bottom-nav-bar');
     const main = document.querySelector('.space');
     
@@ -9,13 +9,13 @@
     }
   }
 
-  test();
+  updateSpace();
 
   const aaaFooter = document.querySelector('.data-first-aaa');
   if (aaaFooter) {
     aaaFooter.addEventListener('click', () => {
-      setTimeout(test, 100);
+      setTimeout(updateSpace, 100);
     });
   }
 
-  window.addEventListener('resize', test);
+  window.addEventListener('resize', updateSpace);

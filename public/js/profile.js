@@ -291,7 +291,6 @@ fetch('/api/me')
 
     if (emailValid && passwordValid) {
       loginBtn.classList.add("active");
-      loginBtn.removeAttribute("disabled");
       loginFrame.classList.add("frame-active");
     } else {
       loginBtn.classList.remove("active");
@@ -307,7 +306,6 @@ fetch('/api/me')
 
     if (emailValid && passwordValid && firstNameValid && lastNameValid) {
       registerBtn.classList.add("active");
-      registerBtn.removeAttribute("disabled");
       registerFrame.classList.add("frame-active");
     } else {
       registerBtn.classList.remove("active");

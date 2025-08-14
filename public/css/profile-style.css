@@ -292,7 +292,7 @@ table {
   display: flex;
   align-items: center;
   padding: 20px;
-  color: #B9491D;
+  color: #A23205;
   background-color: transparent;
 }
 .hamburger-menu .dropdown .dropdown-toggle .drop-up-btn__text {
@@ -328,7 +328,7 @@ table {
   width: 44px;
   height: 44px;
   padding: 3px;
-  background-color: #B9491D;
+  background-color: #A23205;
   font-size: 0.875rem;
   color: #fff;
 }
@@ -408,7 +408,7 @@ table {
 }
 .login-sec .login-form__message {
   font-size: 0.875rem;
-  color: #E40004;
+  color: #B60003;
   padding: 30px 0;
   text-align: center;
 }
@@ -504,7 +504,7 @@ table {
   width: 44px;
   height: 44px;
   padding: 3px;
-  background-color: #B9491D;
+  background-color: #A23205;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -562,7 +562,7 @@ table {
 }
 .register-sec .register-form__message {
   font-size: 0.875rem;
-  color: #E40004;
+  color: #B60003;
   padding: 30px 0;
   text-align: center;
 }
@@ -648,7 +648,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #B9491D;
+  background-color: #A23205;
   color: #fff;
 }
 .user-sec .logout-btn-wrapper .logout-btn__frame {
@@ -701,11 +701,6 @@ a {
 }
 .user-sec .data-sec .user-data__value {
   font-weight: 600;
-}
-
-.value-email-font-increase {
-  overflow-wrap: break-word;
-  min-width: 300px;
 }
 
 .profile-drop-up-btn {
@@ -775,7 +770,7 @@ a {
   display: flex;
   align-self: start;
   padding: 3px;
-  background-color: #B9491D;
+  background-color: #A23205;
   font-size: 0.875rem;
   color: #fff;
   margin-top: 20px;

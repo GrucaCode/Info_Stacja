@@ -292,7 +292,7 @@ table {
   display: flex;
   align-items: center;
   padding: 20px;
-  color: #B9491D;
+  color: #A23205;
   background-color: transparent;
 }
 .hamburger-menu .dropdown .dropdown-toggle .drop-up-btn__text {
@@ -328,7 +328,7 @@ table {
   width: 44px;
   height: 44px;
   padding: 3px;
-  background-color: #B9491D;
+  background-color: #A23205;
   font-size: 0.875rem;
   color: #fff;
 }
