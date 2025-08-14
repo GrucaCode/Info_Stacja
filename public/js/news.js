@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const dotsContainer = document.querySelector('.slider__dots');
 
       let currentIndex = 0;
-
+      
+      slidesContainer.appendChild(slide);
       // Dodanie slajdów i kropek do nawigacji slajdera
       articles.forEach((article, index) => {
         const slide = document.createElement('div');
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
         `;
-        slidesContainer.appendChild(slide);
+        // slidesContainer.appendChild(slide);
 
         slide.querySelector('.btn-read-more').addEventListener('click', () => {
           const articleData = {
