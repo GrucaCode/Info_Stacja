@@ -16,7 +16,7 @@ router.post('/', requireAuth, async (req, res) => {
     if (!title || !url) return res.status(400).json({ success:false, message:'Brak wymaganych pól' });
 
     const existing = await SavedArticle.findOne({ where: { userId: req.session.user.id, url } });
-    if (existing) return res.status(200).json({ success:true, message:'Już zapisane' });
+    if (existing) return res.status(200).json({ success:true, message:'Artykuł został już zapisany wcześniej' });
 
     const saved = await SavedArticle.create({
       userId: req.session.user.id,
@@ -32,7 +32,7 @@ router.post('/', requireAuth, async (req, res) => {
   }
 });
 
-router.get('/', requireAuth, async (req, res) => {
+router.get('/', requireAuth, async (req, res) => { //było po prostu /
   try {
     const sort = (req.query.sort || 'newest');
     const order = sort === 'oldest' ? 'ASC' : 'DESC';
@@ -47,17 +47,32 @@ router.get('/', requireAuth, async (req, res) => {
   }
 });
 
+// pobranie jednego zapisu
+router.get('/:id', requireAuth, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const item = await SavedArticle.findOne({
+      where: { id, userId: req.session.user.id }
+    });
+    if (!item) return res.status(404).json({ success: false, message: 'Nie znaleziono artykułu. Możliwe, że został usunięty ze strony źródłowej. Najlepiej usunąć go z listy zapisanych wiadomości' });
+    res.json({ success: true, item });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ success: false, message: 'Błąd pobierania zapisu' });
+  }
+}); //dodane
+
 router.delete('/:id', requireAuth, async (req, res) => {
   try {
     const { id } = req.params;
     const rows = await SavedArticle.destroy({
       where: { id, userId: req.session.user.id }
     });
-    if (!rows) return res.status(404).json({ success:false, message:'Nie znaleziono' });
+    if (!rows) return res.status(404).json({ success:false, message:'Nie znaleziono artykułu' });
     res.json({ success:true });
   } catch (e) {
     console.error(e);
-    res.status(500).json({ success:false, message:'Błąd usuwania' });
+    res.status(500).json({ success:false, message:'Błąd usuwania artykułu' });
   }
 });
 

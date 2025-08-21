@@ -9,11 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const dotsContainer = document.querySelector('.slider__dots');
 
       let currentIndex = 0;
-      
-      slidesContainer.appendChild(slide);
+
+      // slidesContainer.appendChild(slide);
       // Dodanie slajdów i kropek do nawigacji slajdera
       articles.forEach((article, index) => {
         const slide = document.createElement('div');
+        // slidesContainer.appendChild(slide);
         slide.classList.add('article');
         slide.style.display = index === 0 ? 'block' : 'none';
 
@@ -51,6 +52,27 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem(`article-${index}`, JSON.stringify(articleData));
           window.location.href = `article.html?id=${index}`;
         });
+
+        // slide.querySelector('.btn-read-more')?.addEventListener('click', () => {
+        //   const articleData = {
+        //     title: article.title,
+        //     author: article.author,
+        //     publish_date: article.publish_date,
+        //     summary: article.summary,
+        //     image: article.image,
+        //     text: article.text,
+        //     url: article.url
+        //   };
+
+        //   const keyBase = article.url || article.title || (`idx-${index}`);
+        //   const key = `a_${encodeURIComponent(keyBase)}`;
+
+        //   localStorage.setItem(key, JSON.stringify(articleData));
+        //   window.location.href = `article.html?key=${encodeURIComponent(key)}`;
+        // });
+        // dodane
+
+        slidesContainer.appendChild(slide);
 
         const dot = document.createElement('i');
         dot.className = 'material-icons-outlined slider__dot';

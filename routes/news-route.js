@@ -2,7 +2,6 @@ import express from 'express';
 import fetch from 'node-fetch';
 import { apiKey } from './secret.js';
 const router = express.Router();
-const API_KEY = process.env.WORLDNEWS_KEY || apiKey;
 
 router.get('/', async (req, res) => {
   const url = `https://api.worldnewsapi.com/search-news?source-country=pl&language=pl&categories=politics,sports,business&sort=publish-time&sort-direction=DESC&number=5&api-key=${apiKey}`;
@@ -29,7 +28,7 @@ router.get('/search', async (req, res) => {
     'number': '10',
     'sort': 'publish-time',
     'sort-direction': 'DESC',
-    'api-key': API_KEY,
+    'api-key': apiKey,
   });
 
   if (categories) params.set('categories', categories);

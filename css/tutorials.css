@@ -1,0 +1,99 @@
+body.no-scroll {
+  overflow: hidden;
+}
+
+.tuts {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+.tuts__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+.tuts__wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.tuts__dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 520px);
+  max-height: 85vh;
+  overflow: auto;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+.tuts__icon {
+  font-size: 30px;
+}
+.tuts__title {
+  font-size: 1rem;
+}
+.tuts__desc {
+  margin: 0 0 20px;
+  font-size: 0.875rem;
+}
+.tuts__grid {
+  display: grid;
+  gap: 15px;
+}
+.tuts__btn {
+  padding: 3px;
+  background: #005F67;
+  color: #fff;
+  text-align: center;
+}
+.tuts__mess {
+  color: #A23205;
+  font-size: 0.875rem;
+  margin: 20px 0;
+  text-align: center;
+}
+.tuts__font-adj {
+  margin-top: 20px;
+}
+
+.tuts[aria-hidden=false] {
+  display: block;
+}
+
+.tuts-btn-text {
+  font-size: 0.75rem;
+  padding: 20px 19px;
+  border: 1px #fff solid;
+}
+
+.close-btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.close-btn-wrapper .close-btn {
+  width: 44px;
+  height: 44px;
+  padding: 3px;
+  background-color: #A23205;
+  font-size: 0.875rem;
+  color: #fff;
+}
+.close-btn-wrapper .close-btn__frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #fff 1px solid;
+  width: 38px;
+  height: 38px;
+}
+.close-btn-wrapper .close-btn-text {
+  font-size: 0.75rem;
+}/*# sourceMappingURL=tutorials.css.map */

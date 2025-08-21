@@ -10,13 +10,13 @@ router.post('/login', async (req, res) => {
     const user = await User.findOne({ where: { email } });
 
     if (!user) {
-      return res.status(401).json({ success: false, message: "Nieprawidłowy e-mail lub hasło" });
+      return res.status(401).json({ success: false, message: "Nieprawidłowy e-mail lub hasło. Spróbuj jeszcze raz" });
     }
 
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (!passwordMatch) {
-      return res.status(401).json({ success: false, message: "Nieprawidłowy e-mail lub hasło" });
+      return res.status(401).json({ success: false, message: "Nieprawidłowy e-mail lub hasło. Spróbuj jeszcze raz" });
     }
     req.session.user = {
       id: user.id,
@@ -51,7 +51,7 @@ router.post('/register', async (req, res) => {
   try {
     const existingUser = await User.findOne({ where: { email } });
     if (existingUser) {
-      return res.status(400).json({ success: false, message: 'Użytkownik już istnieje. Podaj inne dane' });
+      return res.status(400).json({ success: false, message: 'Ten użytkownik posiada już profil w aplikacji. Podaj inne dane lub zaloguj się' });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -66,6 +66,7 @@ router.post('/register', async (req, res) => {
     
     // Automatyczne logowanie po rejestracji
     req.session.user = {
+      id: newUser.id, //dodane
       email: newUser.email,
       firstName: newUser.firstName,
       lastName: newUser.lastName

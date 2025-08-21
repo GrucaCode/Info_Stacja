@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wrap.className = 'results';
     if (!news.length) {
       wrap.innerHTML = `<p>Nie znaleziono wyników dla podanego zapytania. Użyj innego słowa lub frazy</p><img src="img/Empty_graphics.svg" alt="Grafika informująca o braku wyników">`;
+      resultSec.appendChild(wrap); //dodane
       return;
     }
 
@@ -65,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     resultSec.appendChild(wrap);
-
     wrap.querySelectorAll('.btn-read-more').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const id = e.currentTarget.getAttribute('data-article-id');
@@ -78,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
   async function performSearch() {
     const q = input.value.trim();
     if (!q) {
-      renderResults([]);
+      // renderResults([]);
+      renderResultsAfterClear(); //dodane
       return;
     }
     try {

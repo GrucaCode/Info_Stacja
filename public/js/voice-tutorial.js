@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const pending = (() => { try { return localStorage.getItem('pendingTutorial'); } catch { return null; } })();
   if (pending === 'voice') {
     if (!micSupported) {
-      alert('Wyszukiwanie głosowe nie jest wspierane w tej przeglądarce. Użyj Chrome.');
+      alert('Wyszukiwanie głosowe nie jest wspierane w tej przeglądarce');
     } else {
       startVoiceTutorial();
     }

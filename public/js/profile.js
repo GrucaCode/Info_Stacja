@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = await r.json();
     const items = data.items || [];
     if (!items.length) {
-      list.innerHTML = '<div class="no-saved"><p class="no-saved__text">Brak zapisanych wiadomości.</p><img src="img/Empty_graphics.svg" alt="Grafika informująca o braku zapisanych wiadomości" class="no-saved__img"></div>';
+      list.innerHTML = '<div class="no-saved"><p class="no-saved__text">Brak zapisanych wiadomości, aby zapisać wiadomość przejdź do strony artykułu i kliknij w przycisk Zapisz w profilu</p><img src="img/Empty_graphics.svg" alt="Grafika informująca o braku zapisanych wiadomości" class="no-saved__img"></div>';
       return;
     }
 
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const wrap = list.querySelector(`[data-id="${id}"]`);
           wrap?.remove();
           if (!list.children.length) {
-            list.innerHTML = '<div class="no-saved"><p class="no-saved__text">Brak zapisanych wiadomości.</p><img src="img/Empty_graphics.svg" alt="Grafika informująca o braku zapisanych wiadomości" class="no-saved__img"></div>';
+            list.innerHTML = '<div class="no-saved"><p class="no-saved__text">Brak zapisanych wiadomości, aby zapisać wiadomość przejdź do strony artykułu i kliknij w przycisk Zapisz w profilu</p><img src="img/Empty_graphics.svg" alt="Grafika informująca o braku zapisanych wiadomości" class="no-saved__img"></div>';
           }
 
         } else {
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   } catch (e) {
     console.error(e);
-    list.innerHTML = '<p>Nie udało się pobrać zapisów.</p>';
+    list.innerHTML = '<p>Nie udało się pobrać zapisów. Błąd po stronie aplikacji</p>';
   }
 }
 
