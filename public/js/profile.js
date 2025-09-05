@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
   .then(res => res.json())
   .then(data => {
     if (data.loggedIn) {
-      // Jeśli użytkownik jest zalogowany wyświetla się sekcja użytkownika z danymi i zapisanymi wiadomościami
       loginSection.style.display = "none";
       registerSection.style.display = "none";
       userSection.style.display = "block";
@@ -284,7 +283,6 @@ fetch('/api/me')
       regSeePassText.textContent = isVisible ? "Zobacz hasło" : "Ukryj hasło";
   });
 }
-  // Aktywacja i dezaktywacja przycisku zaloguj się
   function validateLoginInputs() {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(loginEmail.value.trim());
     const passwordValid = loginPassword.value.trim().length > 0;
@@ -297,7 +295,6 @@ fetch('/api/me')
       loginFrame.classList.remove("frame-active");
     }
   }
-  // Aktywacja i dezaktywacja przycisku zarejestruj się
   function validateRegisterInputs() {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(registerEmail.value.trim());
     const passwordValid = registerPassword.value.trim().length > 0;

@@ -66,7 +66,7 @@ router.post('/register', async (req, res) => {
     
     // Automatyczne logowanie po rejestracji
     req.session.user = {
-      id: newUser.id, //dodane
+      id: newUser.id,
       email: newUser.email,
       firstName: newUser.firstName,
       lastName: newUser.lastName

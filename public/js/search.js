@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wrap.className = 'results';
     if (!news.length) {
       wrap.innerHTML = `<p>Nie znaleziono wyników dla podanego zapytania. Użyj innego słowa lub frazy</p><img src="img/Empty_graphics.svg" alt="Grafika informująca o braku wyników">`;
-      resultSec.appendChild(wrap); //dodane
+      resultSec.appendChild(wrap);
       return;
     }
 
@@ -78,8 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function performSearch() {
     const q = input.value.trim();
     if (!q) {
-      // renderResults([]);
-      renderResultsAfterClear(); //dodane
+      renderResultsAfterClear();
       return;
     }
     try {

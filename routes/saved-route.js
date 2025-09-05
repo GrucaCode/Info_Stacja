@@ -32,7 +32,7 @@ router.post('/', requireAuth, async (req, res) => {
   }
 });
 
-router.get('/', requireAuth, async (req, res) => { //było po prostu /
+router.get('/', requireAuth, async (req, res) => {
   try {
     const sort = (req.query.sort || 'newest');
     const order = sort === 'oldest' ? 'ASC' : 'DESC';
@@ -60,7 +60,7 @@ router.get('/:id', requireAuth, async (req, res) => {
     console.error(e);
     res.status(500).json({ success: false, message: 'Błąd pobierania zapisu' });
   }
-}); //dodane
+});
 
 router.delete('/:id', requireAuth, async (req, res) => {
   try {
