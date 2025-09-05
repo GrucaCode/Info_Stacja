@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       borderBottom.forEach(border => { if (border) border.style.borderBottom = "none"; });
     });
   });
-
   updateAuthMenu();
 });
 
@@ -88,6 +87,7 @@ async function updateAuthMenu() {
   }
 }
 
+// globalny listener do wylogowania
 document.addEventListener('click', async (e) => {
   const target = e.target.closest('#logout-btn');
   if (!target) return;

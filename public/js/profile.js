@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Sprawdzenie czy użytkownik jest zalogowny - wyświetlenie odpowiedniego widoku
   fetch('/api/me')
   .then(res => res.json())
   .then(data => {
@@ -283,6 +282,7 @@ fetch('/api/me')
       regSeePassText.textContent = isVisible ? "Zobacz hasło" : "Ukryj hasło";
   });
 }
+  // Aktywacja i dezaktywacja przycisku zaloguj się
   function validateLoginInputs() {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(loginEmail.value.trim());
     const passwordValid = loginPassword.value.trim().length > 0;
@@ -295,6 +295,7 @@ fetch('/api/me')
       loginFrame.classList.remove("frame-active");
     }
   }
+  // Aktywacja i dezaktywacja przycisku zarejestruj się
   function validateRegisterInputs() {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(registerEmail.value.trim());
     const passwordValid = registerPassword.value.trim().length > 0;

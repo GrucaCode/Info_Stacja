@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.body.innerHTML = `
       <main class="news"><div class="news__content">
         <p>${err.message}</p>
-        <p><a href="index.html">← Wróć na stronę główną</a></p>
+        <p><a href="index.html">Wróć na stronę główną</a></p>
       </div></main>`;
     return;
   }
@@ -129,3 +129,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 });
+

@@ -17,7 +17,7 @@ if (cleanBtn && registerForm) {
     e.preventDefault();
     registerForm.reset();
     document.getElementById("register-message").textContent = "";
-    updateSubmitState();
+    updateSubmitState(); 
   });
 }
 
